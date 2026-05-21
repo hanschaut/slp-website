@@ -4,23 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- SEO Titel & Description -->
+    <!-- Grundlegende SEO -->
     <title>SchwarzLicht PHOTOGRAPHY | Hochzeitsfotograf Waldkirchen & Niederbayern</title>
-    <meta name="description" content="Emotionale Hochzeitsfotografie, authentische Business-Porträts und Event-Fotografie im Bayerischen Wald. Hannes Schwarz fotografiert mit Herz und natürlichem Licht. Jetzt anfragen.">
-    
-    <!-- Keywords -->
-    <meta name="keywords" content="Hochzeitsfotograf Waldkirchen, Fotograf Niederbayern, Business Fotografie, Event Fotograf, Familienfotografie Bayerischer Wald, SchwarzLicht Photography">
+    <meta name="description" content="Emotionale Hochzeitsfotografie, authentische Business-Porträts und Event-Fotografie im Bayerischen Wald. Natürliches Licht und echte Geschichten. Jetzt anfragen.">
     
     <!-- Open Graph / Social Media -->
     <meta property="og:title" content="SchwarzLicht PHOTOGRAPHY - Hochzeitsfotograf Waldkirchen">
-    <meta property="og:description" content="Echte Emotionen. Natürliches Licht. Professionelle Fotografie für Hochzeiten, Business und Events im Bayerischen Wald.">
-    <meta property="og:image" content="https://deine-domain.de/public/bilder/og-image.jpg"> <!-- später anpassen -->
-    <meta property="og:url" content="https://deine-domain.de">
+    <meta property="og:description" content="Emotionale Hochzeitsfotografie, Business-Porträts und Event-Fotografie im Bayerischen Wald.">
+    <meta property="og:image" content="https://schwarzlichtphotography.com/public/bilder/og-image.jpg">
+    <meta property="og:url" content="https://schwarzlichtphotography.com">
     <meta property="og:type" content="website">
-    
-    <!-- Favicon & Apple Touch Icon (optional, später) -->
-    <link rel="icon" href="public/logo.png">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <meta property="og:locale" content="de_DE">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SchwarzLicht PHOTOGRAPHY - Hochzeitsfotograf Waldkirchen">
+    <meta name="twitter:description" content="Emotionale Hochzeitsfotografie, Business-Porträts und Event-Fotografie im Bayerischen Wald.">
+    <meta name="twitter:image" content="https://schwarzlichtphotography.com/public/bilder/og-image.jpg">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://schwarzlichtphotography.com">
+
+   <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body { font-family: system-ui, sans-serif; }
     </style>
@@ -854,7 +859,7 @@
     </footer>
 
 <script>
-    // Lightbox Funktionen
+    // ==================== LIGHTBOX ====================
     function openLightbox(img) {
         document.getElementById('lightbox-image').src = img.src;
         document.getElementById('lightbox').classList.remove('hidden');
@@ -866,7 +871,7 @@
         document.getElementById('lightbox').classList.remove('flex');
     }
 
-    // ESC-Taste zum Schließen
+    // ESC-Taste
     document.addEventListener('keydown', (e) => {
         if (e.key === "Escape") closeLightbox();
     });
@@ -876,26 +881,33 @@
         const items = document.querySelectorAll('.gallery-item');
         const buttons = document.querySelectorAll('#portfolio button');
 
-        // Alle Buttons deaktivieren
-        buttons.forEach(btn => btn.classList.remove('active-filter', 'bg-amber-400/10', 'border-amber-400'));
+        // Alle Buttons zurücksetzen
+        buttons.forEach(btn => {
+            btn.classList.remove('active-filter', 'bg-amber-400/10', 'border-amber-400');
+        });
 
         // Aktiven Button hervorheben
-        event.currentTarget.classList.add('active-filter', 'bg-amber-400/10', 'border-amber-400');
+        const activeButton = Array.from(buttons).find(btn => 
+            btn.getAttribute('onclick').includes(`'${category}'`)
+        );
+        if (activeButton) {
+            activeButton.classList.add('active-filter', 'bg-amber-400/10', 'border-amber-400');
+        }
 
         // Bilder filtern
         items.forEach(item => {
             if (category === 'all') {
                 item.style.display = 'block';
             } else {
-                item.style.display = item.getAttribute('data-category') === category ? 'block' : 'none';
+                item.style.display = (item.getAttribute('data-category') === category) ? 'block' : 'none';
             }
         });
     }
 
-    // Standardmäßig alle Bilder anzeigen beim Laden
-    window.onload = function() {
+    // Initiales Laden (ohne Event)
+    document.addEventListener('DOMContentLoaded', () => {
         filterCategory('all');
-    };
+    });
 </script>
 
 
