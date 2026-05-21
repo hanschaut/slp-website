@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SchwarzLicht PHOTOGRAPHY</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: system-ui, sans-serif; }
+    </style>
+</head>
+<body class="bg-zinc-950 text-zinc-100">
+
+    <!-- Header mit deinem Logo -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-zinc-950/90 backdrop-blur-md border-b border-zinc-800">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-4">
+                <img src="public/logo.png" alt="SchwarzLicht PHOTOGRAPHY" class="h-16 w-auto">
+            </a>
+
+            <nav class="hidden md:flex gap-8 text-sm uppercase tracking-widest">
+                <a href="index.html#portfolio" class="hover:text-amber-400 transition">Portfolio</a>
+ 
+                <a href="index.html#ueber-mich" class="hover:text-amber-400 transition">Über mich</a>
+                
+                <a href="kontakt.html" class="hover:text-amber-400 transition">Kontakt</a>
+
+            </nav>
+
+            <a href="tel:+4915232741548" 
+               class="bg-white text-zinc-950 px-8 py-4 rounded-full font-medium hover:bg-amber-400 transition">
+                Jetzt anrufen
+            </a>
+        </div>
+    </header>
+
+  
+
+ 
+
+   
+
+
+   <!-- Kontakt Inhalt -->
+    <section id="kontakt" class="pt-32 pb-24">
+        <div class="max-w-5xl mx-auto px-6">
+        
+            <p class="text-zinc-400 text-center mb-16">Ich freue mich auf deine Nachricht.</p>
+
+            <div class="grid md:grid-cols-2 gap-16">
+                <!-- Links -->
+
+<!-- Links - einheitliche Schriftgröße & größere Icons -->
+<div>
+    <h3 class="text-3xl mb-10">Direkt kontaktieren</h3>
+    
+    <!-- Telefon -->
+    <div class="flex items-center gap-5 mb-8">
+        <div class="w-7 h-7 flex items-center justify-center text-amber-400 text-2xl">☎</div>
+        <a href="tel:+4915232741548" 
+           class="text-xl font-light tracking-tight hover:text-amber-400 transition">
+            +49 152 32741548
+        </a>
+    </div>
+
+    <!-- E-Mail -->
+    <div class="flex items-center gap-5 mb-8">
+        <div class="w-7 h-7 flex items-center justify-center text-amber-400 text-2xl">✉</div>
+        <a href="mailto:schwarzhannes@icloud.com" 
+           class="text-xl font-light tracking-tight hover:text-amber-400 transition">
+            schwarzhannes@icloud.com
+        </a>
+    </div>
+
+    <!-- Adresse mit Google Maps Link -->
+    <div class="flex items-center gap-5">
+        <div class="w-7 h-7 flex items-center justify-center text-amber-400 text-2xl">📍</div>
+        <a href="https://www.google.com/maps/search/?api=1&query=Büchl+20+94065+Waldkirchen" 
+           target="_blank"
+           class="text-xl font-light tracking-tight hover:text-amber-400 transition">
+            Hannes Schwarz<br>
+            Büchl 20<br>
+            94065 Waldkirchen
+        </a>
+    </div>
+</div>
+
+
+
+                <!-- Rechts - Formular -->
+                <div>
+                    <h2 class="text-3xl mb-8">Nachricht schreiben</h2>
+                    <form action="https://formspree.io/f/mkoejjdq" method="POST" class="space-y-6">
+                        <input type="text" name="name" placeholder="Dein Name" class="w-full bg-zinc-900 border border-zinc-700 rounded-2xl px-6 py-5 focus:outline-none focus:border-amber-400">
+                        <input type="email" name="email" placeholder="Deine E-Mail" class="w-full bg-zinc-900 border border-zinc-700 rounded-2xl px-6 py-5 focus:outline-none focus:border-amber-400">
+                        <textarea name="message" rows="8" placeholder="Deine Nachricht..." class="w-full bg-zinc-900 border border-zinc-700 rounded-2xl px-6 py-5 focus:outline-none focus:border-amber-400"></textarea>
+                        <button type="submit" class="w-full bg-white text-zinc-950 py-6 rounded-2xl font-medium text-lg hover:bg-amber-400 transition">
+                            Nachricht senden
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- ===================== ÜBER MICH ===================== -->
+    <section id="ueber-mich" class="py-24 bg-zinc-900">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <!-- Bild (Platzhalter) -->
+                <div>
+                    <img src="public/bilder/ueber-mich/hannes.jpg" 
+                         alt="Hannes Schwarz" 
+                         class="w-full rounded-3xl shadow-2xl">
+                </div>
+
+                <!-- Text -->
+                <div>
+                    <h2 class="text-5xl tracking-tighter mb-8">Hannes Schwarz
+                    </h2>
+                    <p class="text-lg text-zinc-300 leading-relaxed">
+                        Ich bin Hannes von SchwarzLicht PHOTOGRAPHY aus Waldkirchen im Bayerischen Wald. 
+                        Mit Leidenschaft und einem scharfen Auge für Licht und Emotion fange ich besondere Momente ein.
+                    </p>
+                    <p class="text-lg text-zinc-300 leading-relaxed mt-6">
+                        Für mich geht es nicht nur um technische Perfektion, sondern vor allem darum, 
+                        echte Gefühle und authentische Geschichten festzuhalten.
+                    
+                    </p>
+                    
+                   
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-12 text-center text-xs text-zinc-500 border-t border-zinc-800">
+        <div class="max-w-7xl mx-auto px-6">
+            © 2026 SchwarzLicht PHOTOGRAPHY • 
+            <a href="impressum.html" class="hover:text-zinc-300 mx-3">Impressum</a> • 
+            <a href="datenschutz.html" class="hover:text-zinc-300 mx-3">Datenschutz</a> • 
+            <a href="agb.html" class="hover:text-zinc-300 mx-3">AGB</a>
+        </div>
+    </footer>
+
+
+</body>
+</html>
