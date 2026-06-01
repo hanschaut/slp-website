@@ -8,6 +8,55 @@
     <title>SchwarzLicht PHOTOGRAPHY | Hochzeitsfotograf Waldkirchen & Niederbayern</title>
     <meta name="description" content="Emotionale Hochzeitsfotografie, authentische Business-Porträts und Event-Fotografie im Bayerischen Wald. Natürliches Licht und echte Geschichten. Jetzt anfragen.">
     
+  <!-- Strukturierte Daten (Schema.org) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "SchwarzLicht PHOTOGRAPHY",
+  "description": "Emotionale Hochzeitsfotografie, authentische Business-Porträts und Event-Fotografie im Bayerischen Wald.",
+  "url": "https://schwarzlichtphotography.com",
+  "telephone": "+49 152 32741548",
+  "email": "schwarzhannes@icloud.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Büchl 20",
+    "addressLocality": "Waldkirchen",
+    "addressRegion": "Bayern",
+    "postalCode": "94065",
+    "addressCountry": "DE"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 48.72885,
+    "longitude": 13.60073
+  },
+  "image": "https://schwarzlichtphotography.com/public/bilder/og-image.jpg",
+  "priceRange": "€€",
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "09:00",
+      "closes": "18:00"
+    }
+  ],
+  "sameAs": [
+    "https://www.instagram.com/schwarzlicht_photography/"
+  ],
+  "@graph": [
+    {
+      "@type": "Photographer",
+      "name": "Hannes Schwarz",
+      "worksFor": {
+        "@type": "LocalBusiness",
+        "name": "SchwarzLicht PHOTOGRAPHY"
+      }
+    }
+  ]
+}
+</script>
+
     <!-- Open Graph / Social Media -->
     <meta property="og:title" content="SchwarzLicht PHOTOGRAPHY - Hochzeitsfotograf Waldkirchen">
     <meta property="og:description" content="Emotionale Hochzeitsfotografie, Business-Porträts und Event-Fotografie im Bayerischen Wald.">
@@ -29,33 +78,65 @@
     <style>
         body { font-family: system-ui, sans-serif; }
     </style>
+
+    <style>
+    body { font-family: system-ui, sans-serif; }
+    
+    /* Verhindert Scrollen der Hauptseite wenn Menü offen */
+    body.menu-open {
+        overflow: hidden;
+    }
+</style>
 </head>
 
 
 <body class="bg-zinc-950 text-zinc-100">
 
-    <!-- Header mit deinem Logo -->
-    <header class="fixed top-0 left-0 right-0 z-50 bg-zinc-950/90 backdrop-blur-md border-b border-zinc-800">
-        <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
-            <a href="#" class="flex items-center gap-4">
-                <img src="public/logo.png" alt="SchwarzLicht PHOTOGRAPHY" class="h-16 w-auto">
-            </a>
+<!-- Header -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-zinc-950/90 backdrop-blur-md border-b border-zinc-800">
+    <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+        <a href="#" class="flex items-center gap-4">
+            <img src="public/logo.png" alt="SchwarzLicht PHOTOGRAPHY" class="h-16 w-auto">
+        </a>
 
-            <nav class="hidden md:flex gap-8 text-sm uppercase tracking-widest">
-                <a href="#portfolio" class="hover:text-amber-400 transition">Portfolio</a>
- 
-                <a href="#ueber-mich" class="hover:text-amber-400 transition">Über mich</a>
-                
-                <a href="kontakt.html" class="hover:text-amber-400 transition">Kontakt</a>
+        <nav class="hidden md:flex gap-8 text-sm uppercase tracking-widest">
+            <a href="portfolio.html" class="hover:text-amber-400 transition">Portfolio</a>
+            <a href="#ueber-mich" class="hover:text-amber-400 transition">Über mich</a>
+            <a href="kontakt.html" class="hover:text-amber-400 transition">Kontakt</a>
+        </nav>
 
-            </nav>
+        <a href="tel:+4915232741548" class="hidden md:block bg-white text-zinc-950 px-8 py-4 rounded-full font-medium hover:bg-amber-400 transition">
+            Jetzt anrufen
+        </a>
 
-            <a href="tel:+4915232741548" 
-               class="bg-white text-zinc-950 px-8 py-4 rounded-full font-medium hover:bg-amber-400 transition">
+        <button id="mobile-menu-button" class="md:hidden text-4xl text-white">
+            ☰
+        </button>
+    </div>
+
+    <!-- Fullscreen Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden fixed inset-0 bg-zinc-950/95 z-[9999] pt-32 px-6 overflow-y-autoflex items-center justify-center">
+        
+        <!-- Dieser Div sorgt für einen 100% undurchsichtigen Hintergrund -->
+    <div class="absolute inset-0 bg-zinc-950"></div>
+        
+        <div class="flex flex-col items-center gap-10 text-3xl uppercase tracking-widest text-center">
+            <a href="portfolio.html" onclick="toggleMobileMenu()" class="hover:text-amber-400 py-3">Portfolio</a>
+            <a href="#ueber-mich" onclick="toggleMobileMenu()" class="hover:text-amber-400 py-3">Über mich</a>
+            <a href="kontakt.html" onclick="toggleMobileMenu()" class="hover:text-amber-400 py-3">Kontakt</a>
+            
+            <a href="tel:+4915232741548" onclick="toggleMobileMenu()" 
+               class="mt-12 bg-white text-zinc-950 px-16 py-7 rounded-2xl font-medium text-xl hover:bg-amber-400 transition">
                 Jetzt anrufen
             </a>
         </div>
-    </header>
+
+        <button onclick="toggleMobileMenu()" 
+                class="absolute top-8 right-8 text-5xl text-zinc-400 hover:text-white">
+            ✕
+        </button>
+    </div>
+</header>
 
     <!-- Hero -->
     <section class="min-h-screen flex items-center justify-center pt-20 text-center px-6">
@@ -69,350 +150,14 @@
                 Waldkirchen  (im Woid)
             
             </p>
-            <a href="#portfolio" class="inline-block bg-white text-zinc-950 px-12 py-5 rounded-full text-xl font-medium hover:bg-amber-400">
+            <a href="portfolio.html" class="inline-block bg-white text-zinc-950 px-12 py-5 rounded-full text-xl font-medium hover:bg-amber-400">
                 Portfolio ansehen
             </a>
         </div>
     </section>
 
-       <!-- PORTFOLIO -->
-    <section id="portfolio" class="py-24 bg-zinc-900">
-    <div class="max-w-7xl mx-auto px-6">
-        <h2 class="text-5xl tracking-tighter text-center mb-4">Portfolio</h2>
-        <p class="text-zinc-400 text-center mb-12">Ausgewählte Arbeiten</p>
 
-            <!-- Filter -->
-            <div class="flex flex-wrap justify-center gap-4 mb-12">
-            <button onclick="filterCategory('all')" 
-                    class="active-filter px-8 py-3 rounded-full border border-amber-400 bg-amber-400/10 text-amber-400 text-sm uppercase tracking-widest">
-                Alle
-            </button>
-            <button onclick="filterCategory('hochzeit')" 
-                    class="px-8 py-3 rounded-full border border-zinc-700 hover:border-amber-400 transition-all text-sm uppercase tracking-widest">
-                Hochzeiten
-            </button>
-            <button onclick="filterCategory('business')" 
-                    class="px-8 py-3 rounded-full border border-zinc-700 hover:border-amber-400 transition-all text-sm uppercase tracking-widest">
-                Business & Porträts
-            </button>
-            <button onclick="filterCategory('event')" 
-                    class="px-8 py-3 rounded-full border border-zinc-700 hover:border-amber-400 transition-all text-sm uppercase tracking-widest">
-                Events
-            </button>
-        </div>
 
-            <!-- Galerie mit optimierter Responsiveness -->
-<div id="gallery" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 auto-rows-fr">
-
-<!-- === HOCHZEITEN === -->
-<div class="gallery-item" data-category="hochzeit">
-<img src="public/bilder/hochzeit/hochzeit-1-Web-Export (WebP)-7.jpg" alt="Brautpaar von hinten auf Holzbrücke, Spitzenkleid mit langer Schleppe, blickt in nebligen Wald" 
-class="w-full aspect-[4/5] object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer"
-onclick="openLightbox(this)">
-</div>
-<div class="gallery-item" data-category="hochzeit">
-<img src="public/bilder/hochzeit/hochzeit-2.jpg" alt="Brautpaar-Hände übereinandergelegt, Ring mit drei Diamantsteinen am Damenfinger" 
-class="w-full aspect-[4/5] object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer"
-onclick="openLightbox(this)">
-</div>
-<div class="gallery-item" data-category="hochzeit">
-<img src="public/bilder/hochzeit/hochzeit-1-Web-Export (WebP)-5.jpg" alt="Detail Bräutigam-Anstecker mit gelber Rose und Eukalyptus am grauen Anzug" 
-class="w-full aspect-[4/5] object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer"
-onclick="openLightbox(this)">
-</div>
-<div class="gallery-item" data-category="hochzeit">
-<img src="public/bilder/hochzeit/hochzeit-4.jpg" alt="Brautpaar in bayerischer Tracht steht im Türrahmen eines alten Bauernhofs" 
-class="w-full aspect-[4/5] object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer"
-onclick="openLightbox(this)">
-</div>
-<div class="gallery-item" data-category="hochzeit">
-<img src="public/bilder/hochzeit/hochzeit-3.jpg" alt="Brautpaar lacht sich auf Wendeltreppe an, Aufnahme von oben in Schwarz-Weiß" 
-class="w-full aspect-[4/5] object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer"
-onclick="openLightbox(this)">
-</div>
-<div class="gallery-item" data-category="hochzeit">
-<img src="public/bilder/hochzeit/hochzeit-1-Web-Export (WebP)-4.jpg" alt="Brautpaar mit Familie an rustikalem Holztisch vor Bauernhof in herbstlicher Sonne" 
-class="w-full aspect-[4/5] object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer"
-onclick="openLightbox(this)">
-</div>
-<div class="gallery-item" data-category="hochzeit">
-<img src="public/bilder/hochzeit/hochzeit-1-Web-Export (WebP)-2.jpg" alt="Brautpaar mit transparentem Schirm im Park, bunte Herbstblätter fliegen wirbelnd umher" 
-class="w-full aspect-[4/5] object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer"
-onclick="openLightbox(this)">
-</div>
-<div class="gallery-item" data-category="hochzeit">
-<img src="public/bilder/hochzeit/hochzeit-1.jpg" alt="Brautpaar steht händchenhaltend auf Burgtreppe unter alter Gaslaterne und schaut sich an" 
-class="w-full aspect-[4/5] object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer"
-onclick="openLightbox(this)">
-</div>
-<div class="gallery-item" data-category="hochzeit">
-<img src="public/bilder/hochzeit/1.jpg" alt="Brautpaar von hinten umarmt, Bräutigam in grauem Sakko, Braut mit Blumenhaarschmuck, schwarz-weiß" 
-class="w-full aspect-[4/5] object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer"
-onclick="openLightbox(this)">
-</div>
-<div class="gallery-item" data-category="hochzeit">
-<img src="public/bilder/hochzeit/2.jpg" alt="Vierköpfige Familie in weißer Kleidung hockt auf Stein im sonnig-grünen Wald" 
-class="w-full aspect-[4/5] object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer"
-onclick="openLightbox(this)">
-</div>
-<div class="gallery-item" data-category="hochzeit">
-<img src="public/bilder/hochzeit/3.jpg" alt="Brautpaar lacht sich auf Wendeltreppe an, Aufnahme von oben in Schwarz-Weiß" 
-class="w-full aspect-[4/5] object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer"
-onclick="openLightbox(this)">
-</div>
-<div class="gallery-item" data-category="hochzeit">
-<img src="public/bilder/hochzeit/4.jpg" alt="Brautpaar in bayerischer Tracht steht im Türrahmen eines alten Bauernhofs" 
-class="w-full aspect-[4/5] object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer"
-onclick="openLightbox(this)">
-</div>
-<div class="gallery-item" data-category="hochzeit">
-<img src="public/bilder/hochzeit/5.jpg" alt="Familie mit Baby steht auf Felsblock im Waldbach, weiches Pastell-Sonnenlicht" 
-class="w-full aspect-[4/5] object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer"
-onclick="openLightbox(this)">
-</div>
-<div class="gallery-item" data-category="hochzeit">
-<img src="public/bilder/hochzeit/6.jpg" alt="Detail Bräutigam-Anstecker aus Trockenblumen am bordeauxroten Sakko mit floralem Einstecktuch" 
-class="w-full aspect-[4/5] object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer"
-onclick="openLightbox(this)">
-</div>
-<div class="gallery-item" data-category="hochzeit">
-<img src="public/bilder/hochzeit/7.jpg" alt="Eltern küssen sich auf Flussstein, kleiner Sohn und Baby zwischen ihnen" 
-class="w-full aspect-[4/5] object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer"
-onclick="openLightbox(this)">
-</div>
-<div class="gallery-item" data-category="hochzeit">
-<img src="public/bilder/hochzeit/8.jpg" alt="Verschlungene Hände eines Brautpaars mit Eheringen vor weißem Rosenstrauß" 
-class="w-full aspect-[4/5] object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer"
-onclick="openLightbox(this)">
-</div>
-<div class="gallery-item" data-category="hochzeit">
-<img src="public/bilder/hochzeit/9.jpg" alt="Brautpaar lacht vor altem mit Blumen bepflanztem Holz-Leiterwagen auf Wiese" 
-class="w-full aspect-[4/5] object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer"
-onclick="openLightbox(this)">
-</div>
-<div class="gallery-item" data-category="hochzeit">
-<img src="public/bilder/hochzeit/10.jpg" alt="Hochzeitsgesellschaft auf historischer Drehscheibe am Bahnhof Eisenstein, Brautpaar vorne" 
-class="w-full aspect-[4/5] object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer"
-onclick="openLightbox(this)">
-</div>
-<div class="gallery-item" data-category="hochzeit">
-<img src="public/bilder/hochzeit/11.jpg" alt="Zwei Eheringe (Diamantring auf Roségold-Ring) auf Holzbalken vor unscharfer Wiese" 
-class="w-full aspect-[4/5] object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer"
-onclick="openLightbox(this)">
-</div>
-<div class="gallery-item" data-category="hochzeit">
-<img src="public/bilder/hochzeit/12.jpg" alt="Acht Trauzeugen springen vor altem Steingebäude in die Luft, Braut breitet Arme aus" 
-class="w-full aspect-[4/5] object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer"
-onclick="openLightbox(this)">
-</div>
-<div class="gallery-item" data-category="hochzeit">
-<img src="public/bilder/hochzeit/13.jpg" alt="Brautpaar als Silhouette unter Burgtorbogen, beide werfen jubelnd die Hände hoch" 
-class="w-full aspect-[4/5] object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer"
-onclick="openLightbox(this)">
-</div>
-<div class="gallery-item" data-category="hochzeit">
-<img src="public/bilder/hochzeit/14.jpg" alt="Glitzerndes Brautkleid auf goldenem Bügel vor abendlichem Sprossenfenster, von hinten beleuchtet" 
-class="w-full aspect-[4/5] object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer"
-onclick="openLightbox(this)">
-</div>
-<div class="gallery-item" data-category="hochzeit">
-<img src="public/bilder/hochzeit/15.jpg" alt="Getigerte Katze schnuppert an Trockenblumen-Brautstrauß auf bemoster Steinkante" 
-class="w-full aspect-[4/5] object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer"
-onclick="openLightbox(this)">
-</div>
-<div class="gallery-item" data-category="hochzeit">
-<img src="public/bilder/hochzeit/16.jpg" alt="Brautpaar entspannt aneinander gelehnt auf antikem goldenen Sofa im Schloss-Salon" 
-class="w-full aspect-[4/5] object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer"
-onclick="openLightbox(this)">
-</div>
-<div class="gallery-item" data-category="hochzeit">
-<img src="public/bilder/hochzeit/17.jpg" alt="Detail-Porträt Braut mit Perlenkette blickt nach oben, Bräutigam unscharf im Hintergrund" 
-class="w-full aspect-[4/5] object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer"
-onclick="openLightbox(this)">
-</div>
-<div class="gallery-item" data-category="hochzeit">
-<img src="public/bilder/hochzeit/18.jpg" alt="Brautpaar küsst sich unter Bogen aus herbstlich gefärbten Weinblättern im Park" 
-class="w-full aspect-[4/5] object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer"
-onclick="openLightbox(this)">
-</div>
-
-<!-- Großes Augenbild (volle Breite) -->
-<div class="gallery-item lg:col-span-3" data-category="hochzeit">
-<img src="public/bilder/hochzeit/hochzeit-1-Web-Export (WebP)-3.jpg" alt="Extreme Nahaufnahme der blauen Augen einer Braut mit langen Wimpern" 
-class="w-full aspect-video object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer"
-onclick="openLightbox(this)">
-</div>
-
-<!-- === BUSINESS & PORTRÄTS === -->
-<div class="gallery-item" data-category="business">
-<img src="public/bilder/business/business-1.jpg" alt="Älterer Geschäftsmann mit blauer Brille, grauem Sakko und kariertem Hemd" 
-class="w-full aspect-[4/5] object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer"
-onclick="openLightbox(this)">
-</div>
-<div class="gallery-item" data-category="business">
-<img src="public/bilder/business/business-2.jpg" alt="Lachende Frau mit lockigem braunem Haar in beiger Strickbluse vor blauem Hintergrund" 
-class="w-full aspect-[4/5] object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer"
-onclick="openLightbox(this)">
-</div>
-<div class="gallery-item" data-category="business">
-<img src="public/bilder/business/3.jpg" alt="Junge Frau mit blauem Strickpullover und goldener Münz-Halskette vor grauem Studiohintergrund" 
-class="w-full aspect-[4/5] object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer"
-onclick="openLightbox(this)">
-</div>
-<div class="gallery-item" data-category="business">
-<img src="public/bilder/business/4.jpg" alt="Lächelnde junge Frau in gepunktetem Kleid mit langen welligen Haaren, Studio-Porträt" 
-class="w-full aspect-[4/5] object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer"
-onclick="openLightbox(this)">
-</div>
-<div class="gallery-item" data-category="business">
-<img src="public/bilder/business/5.jpg" alt="Lächelnde Frau mit Zopf und blauem Strickpullover vor grauem Studiohintergrund" 
-class="w-full aspect-[4/5] object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer"
-onclick="openLightbox(this)">
-</div>
-<div class="gallery-item" data-category="business">
-<img src="public/bilder/business/6.jpg" alt="Lachender Mann mit Smoking, Fliege und gemustertem Kragen in dramatischer Low-Key-Beleuchtung" 
-class="w-full aspect-[4/5] object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer"
-onclick="openLightbox(this)">
-</div>
-<div class="gallery-item" data-category="business">
-<img src="public/bilder/business/8.jpg" alt="Geschäftsmann mit Vollbart, dunklem Sakko und weißem Hemd, freundliches Headshot-Lächeln" 
-class="w-full aspect-[4/5] object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer"
-onclick="openLightbox(this)">
-</div>
-<div class="gallery-item" data-category="business">
-<img src="public/bilder/business/7.jpg" alt="Profil-Porträt einer dreiköpfigen Familie nebeneinander in warmem Seitenlicht" 
-class="w-full aspect-[4/5] object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer"
-onclick="openLightbox(this)">
-</div>
-
-<!-- === EVENTS === -->
-<div class="gallery-item" data-category="event">
-<img src="public/bilder/event/1.jpg" alt="Hyundai i20 Rallye-Auto in rot-blauer WRC-Lackierung auf herbstlicher Waldstraße" 
-class="w-full aspect-video object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer"
-onclick="openLightbox(this)">
-</div>
-<div class="gallery-item" data-category="event">
-<img src="public/bilder/event/2.jpg" alt="Mountainbiker im Downhill-Sprung über Waldboden, farbiges Bike vor schwarz-weißem Wald" 
-class="w-full aspect-video object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer"
-onclick="openLightbox(this)">
-</div>
-<div class="gallery-item" data-category="event">
-<img src="public/bilder/event/3.jpg" alt="Skoda Fabia Rallye-Auto mit gelb-roter Lackierung im herbstlichen Nadelwald" 
-class="w-full aspect-video object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer"
-onclick="openLightbox(this)">
-</div>
-<div class="gallery-item" data-category="event">
-<img src="public/bilder/event/4.jpg" alt="Orange-blaues Hyundai-Rallye-Auto auf engem Waldweg, Herbstlaub am Boden" 
-class="w-full aspect-video object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer"
-onclick="openLightbox(this)">
-</div>
-<div class="gallery-item" data-category="event">
-<img src="public/bilder/event/5.jpg" alt="Frontansicht eines WRC-Hyundai-Rallyeautos beim Anbremsen, Laub wirbelt unter dem Wagen" 
-class="w-full aspect-video object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer"
-onclick="openLightbox(this)">
-</div>
-<div class="gallery-item" data-category="event">
-<img src="public/bilder/event/6.jpg" alt="M-Sport Ford Puma Rally1 Heckansicht in Red-Bull-Design vor herbstlicher Allee" 
-class="w-full aspect-video object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer"
-onclick="openLightbox(this)">
-</div>
-<div class="gallery-item" data-category="event">
-<img src="public/bilder/event/7.jpg" alt="Grün-weiß lackierter Skoda Fabia Rallye-Wagen in schneller Kurvenfahrt" 
-class="w-full aspect-video object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer"
-onclick="openLightbox(this)">
-</div>
-<div class="gallery-item" data-category="event">
-<img src="public/bilder/event/8.jpg" alt="Mountainbike-Marathonfahrer trinkt aus Powerbar-Becher, frische Schürfwunde am Arm" 
-class="w-full aspect-video object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer"
-onclick="openLightbox(this)">
-</div>
-<div class="gallery-item" data-category="event">
-<img src="public/bilder/event/9.jpg" alt="Schwitzender Rennradfahrer kippt Becher beim Fahren, blutige Schürfwunde am Oberarm" 
-class="w-full aspect-video object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer"
-onclick="openLightbox(this)">
-</div>
-<div class="gallery-item" data-category="event">
-<img src="public/bilder/event/10.jpg" alt="Helfer reicht Becher an Mountainbike-Fahrer beim Vorbeifahren an einer Trinkstation" 
-class="w-full aspect-video object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer"
-onclick="openLightbox(this)">
-</div>
-<div class="gallery-item" data-category="event">
-<img src="public/bilder/event/11.jpg" alt="Lachende Mountainbikerin wird im Rennen mit einem Wasserschlauch abgekühlt" 
-class="w-full aspect-video object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer"
-onclick="openLightbox(this)">
-</div>
-<div class="gallery-item" data-category="event">
-<img src="public/bilder/event/12.jpg" alt="Mountainbiker fährt eine Holztreppen-Passage vor steiler Felswand hinunter" 
-class="w-full aspect-video object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer"
-onclick="openLightbox(this)">
-</div>
-<div class="gallery-item" data-category="event">
-<img src="public/bilder/event/13.jpg" alt="Mountainbiker fährt mit erhobenen Armen unter Hervis-Sports-Zielbogen ins Ziel" 
-class="w-full aspect-video object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer"
-onclick="openLightbox(this)">
-</div>
-<div class="gallery-item" data-category="event">
-<img src="public/bilder/event/14.jpg" alt="Profi-Mountainbiker im Bora-hansgrohe-Trikot rollt nach dem Rennen über die Ziellinie" 
-class="w-full aspect-video object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer"
-onclick="openLightbox(this)">
-</div>
-<div class="gallery-item" data-category="event">
-<img src="public/bilder/event/15.jpg" alt="Junger Mountainbiker im Texpa-Trikot wird mit Trophy-Mikrofon interviewt" 
-class="w-full aspect-video object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer"
-onclick="openLightbox(this)">
-</div>
-<div class="gallery-item" data-category="event">
-<img src="public/bilder/event/16.jpg" alt="Breakdancer in akrobatischer Bodenpose vor schummrig beleuchtetem Galapublikum" 
-class="w-full aspect-video object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer"
-onclick="openLightbox(this)">
-</div>
-<div class="gallery-item" data-category="event">
-<img src="public/bilder/event/17.jpg" alt="Sängerin mit Hut, Brille und pinkem Blazer auf Bühne, Gitarre umgehängt" 
-class="w-full aspect-video object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer"
-onclick="openLightbox(this)">
-</div>
-<div class="gallery-item" data-category="event">
-<img src="public/bilder/event/18.jpg" alt="Luftakrobatin am Vertikalreifen vor schwarzem Bühnenhimmel mit Sonnen-Projektion" 
-class="w-full aspect-video object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer"
-onclick="openLightbox(this)">
-</div>
-<div class="gallery-item" data-category="event">
-<img src="public/bilder/event/19.jpg" alt="Akrobatin kopfüber an gelbem Vertikaltuch unter dunklem Hallendach" 
-class="w-full aspect-video object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer"
-onclick="openLightbox(this)">
-</div>
-    </section>
-        </div>
-    </section>
-
- <!-- ==================== LIGHTBOX ==================== -->
-    <div id="lightbox" class="hidden fixed inset-0 bg-black/95 z-[100] flex items-center justify-center p-4">
-        <div class="relative max-w-5xl w-full">
-            <button onclick="closeLightbox()" 
-                    class="absolute -top-4 -right-4 bg-zinc-900 hover:bg-red-600 text-white w-12 h-12 rounded-full flex items-center justify-center text-3xl transition z-10">
-                ✕
-            </button>
-            <img id="lightbox-image" src="" alt="" class="max-h-[85vh] w-auto mx-auto rounded-2xl shadow-2xl">
-        </div>
-    </div>
-
-    <script>
-        function openLightbox(img) {
-            document.getElementById('lightbox-image').src = img.src;
-            document.getElementById('lightbox').classList.remove('hidden');
-            document.getElementById('lightbox').classList.add('flex');
-        }
-
-        function closeLightbox() {
-            document.getElementById('lightbox').classList.add('hidden');
-            document.getElementById('lightbox').classList.remove('flex');
-        }
-
-        // ESC-Taste zum Schließen
-        document.addEventListener('keydown', (e) => {
-            if (e.key === "Escape") closeLightbox();
-        });
-    </script>
 
 
      <!-- ===================== ÜBER MICH ===================== -->
@@ -519,7 +264,7 @@ onclick="openLightbox(this)">
     <section id="philosophie" class="space-y-0">
 
         <!-- Bild 1 -->
-        <div class="relative w-full">
+        <div class="max-w-5xl mx-auto px-6">
             <img src="public/bilder/philosophie/1.jpg" alt="" class="w-full h-auto block">
         </div>
 
@@ -534,7 +279,7 @@ onclick="openLightbox(this)">
         </div>
 
         <!-- Bild 2 -->
-        <div class="relative w-full">
+        <div class="max-w-5xl mx-auto px-6">
             <img src="public/bilder/philosophie/2.jpg" alt="" class="w-full h-auto block">
         </div>
 
@@ -549,7 +294,7 @@ onclick="openLightbox(this)">
         </div>
 
         <!-- Bild 3 -->
-        <div class="relative w-full">
+        <div class="max-w-5xl mx-auto px-6">
             <img src="public/bilder/philosophie/3.jpg" alt="" class="w-full h-auto block">
         </div>
 
@@ -564,7 +309,7 @@ onclick="openLightbox(this)">
         </div>
 
         <!-- Bild 4 -->
-        <div class="relative w-full">
+        <div class="max-w-5xl mx-auto px-6">
             <img src="public/bilder/philosophie/4.jpg" alt="" class="w-full h-auto block">
         </div>
 
@@ -579,7 +324,7 @@ onclick="openLightbox(this)">
         </div>
 
         <!-- Bild 5 -->
-        <div class="relative w-full">
+        <div class="max-w-5xl mx-auto px-6">
             <img src="public/bilder/philosophie/5.jpg" alt="" class="w-full h-auto block">
         </div>
 
@@ -594,23 +339,29 @@ onclick="openLightbox(this)">
         </div>
 
         <!-- Bilder 6–10 (mit Zitaten) -->
-        <div class="relative w-full"><img src="public/bilder/philosophie/6.jpg" alt="" class="w-full h-auto block"></div>
+        <div class="max-w-5xl mx-auto px-6"><img src="public/bilder/philosophie/6.jpg" alt="" class="w-full h-auto block"></div>
         <div class="bg-zinc-950 py-20 text-center"><div class="max-w-3xl mx-auto px-6"><p class="text-3xl italic text-white">„Der Moment entscheidet – nicht die Technik.“</p></div></div>
         
-        <div class="relative w-full"><img src="public/bilder/philosophie/7.jpg" alt="" class="w-full h-auto block"></div>
+        <div class="max-w-5xl mx-auto px-6"><img src="public/bilder/philosophie/7.jpg" alt="" class="w-full h-auto block"></div>
         <div class="bg-zinc-950 py-20 text-center"><div class="max-w-3xl mx-auto px-6"><p class="text-3xl italic text-white">„Fotografie ist die Kunst, den unsichtbaren Augenblick sichtbar zu machen.“</p></div></div>
         
-        <div class="relative w-full"><img src="public/bilder/philosophie/8.jpg" alt="" class="w-full h-auto block"></div>
+        <div class="max-w-5xl mx-auto px-6"><img src="public/bilder/philosophie/8.jpg" alt="" class="w-full h-auto block"></div>
         <div class="bg-zinc-950 py-20 text-center"><div class="max-w-3xl mx-auto px-6"><p class="text-3xl italic text-white">„Es ist eine Sache, ein Bild davon zu machen, wie eine Person aussieht – es ist eine andere Sache, ein Porträt davon zu machen, wer sie ist.
 “<p class="mt-6 text-amber-400">— Paul Caponigro</p></p></div></div>
         
-        <div class="relative w-full"><img src="public/bilder/philosophie/9.jpg" alt="" class="w-full h-auto block"></div>
+        <div class="max-w-5xl mx-auto px-6"><img src="public/bilder/philosophie/9.jpg" alt="" class="w-full h-auto block"></div>
         <div class="bg-zinc-950 py-20 text-center"><div class="max-w-3xl mx-auto px-6"><p class="text-3xl italic text-white">„Jedes Foto erzählt eine Geschichte – ich höre nur zu.“</p></div></div>
         
-        <div class="relative w-full"><img src="public/bilder/philosophie/10.jpg" alt="" class="w-full h-auto block"></div>
+        <div class="max-w-5xl mx-auto px-6"><img src="public/bilder/philosophie/10.jpg" alt="" class="w-full h-auto block"></div>
 
     </section>
 
+  <div class="flex justify-center mt-40 mb-40">
+    <a href="portfolio.html" 
+       class="inline-block bg-white text-zinc-950 px-16 py-6 rounded-full text-2xl font-medium hover:bg-amber-400 transition-all duration-300 shadow-lg hover:shadow-xl">
+        Portfolio ansehen
+    </a>
+</div>
        <!-- ===================== PREISE ===================== -->
     <section id="preise" class="py-24 bg-zinc-950 border-t border-zinc-800">
         <div class="max-w-5xl mx-auto px-6">
@@ -636,8 +387,8 @@ onclick="openLightbox(this)">
                     <h3 class="text-2xl mb-2">Business & Porträts</h3>
                     <p class="text-amber-400 text-5xl font-light">150 €</p>
                     <ul class="mt-8 space-y-3 text-sm">
-                        <li>✓ 1 Stunde Shooting</li>
-                        <li>✓ Professionelle Nachbearbeitung</li>
+                        <li>✓ 1h Shooting</li>
+                        <li>✓ Individuelle Bearbeitung</li>
                         <li>✓ gemeinsame Auswahl</li>
                         
                     </ul>
@@ -796,12 +547,12 @@ onclick="openLightbox(this)">
                 <div>
                     <h4 class="text-white uppercase tracking-widest text-sm mb-6 md:text-left text-center">Navigation</h4>
                     <div class="flex flex-col gap-3 text-sm md:items-start items-center">
-                        <a href="#portfolio" class="text-zinc-400 hover:text-white transition">Portfolio</a>
-                        <a href="#ueber-mich" class="text-zinc-400 hover:text-white transition">Über mich</a>
-                        <a href="#philosophie" class="text-zinc-400 hover:text-white transition">Philosophie</a>
-                        <a href="#ablauf" class="text-zinc-400 hover:text-white transition">Shooting-Ablauf</a>
-                        <a href="#preise" class="text-zinc-400 hover:text-white transition">Preise</a>
-                        <a href="#bewertungen" class="text-zinc-400 hover:text-white transition">Kundenstimmen</a>
+                        <a href="portfolio.html" class="text-zinc-400 hover:text-white transition">Portfolio</a>
+                        <a href="index.html#ueber-mich" class="text-zinc-400 hover:text-white transition">Über mich</a>
+                        <a href="index.html#philosophie" class="text-zinc-400 hover:text-white transition">Philosophie</a>
+                        <a href="index.html#ablauf" class="text-zinc-400 hover:text-white transition">Shooting-Ablauf</a>
+                        <a href="index.html#preise" class="text-zinc-400 hover:text-white transition">Preise</a>
+                        <a href="index.html#bewertungen" class="text-zinc-400 hover:text-white transition">Kundenstimmen</a>
                     </div>
                 </div>
 
@@ -817,7 +568,7 @@ onclick="openLightbox(this)">
                     </a>
 
                     <!-- Adresse mit Maps -->
-                    <a href="https://www.google.com/maps/place/SchwarzLicht+Photography/@48.7288565,13.5981516,574m/data=!3m2!1e3!4b1!4m6!3m5!1s0x4774ed48ab545cc1:0xb66cb0d843a77260!8m2!3d48.728853!4d13.6007265!16s%2Fg%2F11sjcrg38m" 
+                    <a href="https://www.google.com/maps/place/SchwarzLicht+Photography/@48.7289437,13.5904603,2647m/data=!3m1!1e3!4m15!1m8!3m7!1s0x4774ed827be5a21f:0x50a2f0c1df07ac3a!2sBüchl+20,+94065+Waldkirchen!3b1!8m2!3d48.72893!4d13.60076!16s%2Fg%2F11rp2lk_w0!3m5!1s0x4774ed48ab545cc1:0xb66cb0d843a77260!8m2!3d48.728853!4d13.6007265!16s%2Fg%2F11sjcrg38m?entry=ttu&g_ep=EgoyMDI2MDUyNy4wIKXMDSoASAFQAw%3D%3D" 
                        target="_blank"
                        class="flex items-start gap-3 text-zinc-400 hover:text-white transition md:justify-start justify-center">
                         <span class="text-2xl mt-0.5">📍</span>
@@ -828,22 +579,30 @@ onclick="openLightbox(this)">
                         </div>
                     </a>
 
-                    <!-- Instagram mit Original-Farben -->
-                    <a href="https://www.instagram.com/schwarzlicht_photography/" target="_blank" 
-                       class="mt-10 flex items-center gap-3 text-zinc-400 hover:text-white transition md:justify-start justify-center">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="url(#instagramGradient)">
-                            <defs>
-                                <linearGradient id="instagramGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                                    <stop offset="0%" stop-color="#f58529"/>
-                                    <stop offset="50%" stop-color="#dd2a7b"/>
-                                    <stop offset="100%" stop-color="#405de6"/>
-                                </linearGradient>
-                            </defs>
-                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.849.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069z"/>
-                            <circle cx="12" cy="12" r="3.5"/>
-                        </svg>
-                        <span class="text-sm font-medium">@schwarzlicht_photography</span>
-                    </a>
+<!-- Instagram mit Original SVG Logo -->
+<a href="https://www.instagram.com/schwarzlicht_photography/" 
+   target="_blank"
+   class="mt-10 flex items-center gap-3 text-zinc-400 hover:text-white transition md:justify-start justify-center">
+    
+    <!-- Original Instagram SVG Logo -->
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <linearGradient id="instaGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#f58529"/>
+                <stop offset="30%" stop-color="#dd2a7b"/>
+                <stop offset="60%" stop-color="#ac2aa8"/>
+                <stop offset="100%" stop-color="#405de6"/>
+            </linearGradient>
+        </defs>
+        <rect width="24" height="24" rx="6" fill="url(#instaGradient)"/>
+        <path d="M12 7.5C9.51472 7.5 7.5 9.51472 7.5 12C7.5 14.4853 9.51472 16.5 12 16.5C14.4853 16.5 16.5 14.4853 16.5 12C16.5 9.51472 14.4853 7.5 12 7.5Z" fill="white"/>
+        <path d="M16.5 7.5C16.5 8.05228 16.0523 8.5 15.5 8.5C14.9477 8.5 14.5 8.05228 14.5 7.5C14.5 6.94772 14.9477 6.5 15.5 6.5C16.0523 6.5 16.5 6.94772 16.5 7.5Z" fill="white"/>
+        <path d="M17.25 3H6.75C4.95507 3 3.5 4.45508 3.5 6.25V17.75C3.5 19.5449 4.95507 21 6.75 21H17.25C19.0449 21 20.5 19.5449 20.5 17.75V6.25C20.5 4.45508 19.0449 3 17.25 3Z" 
+              stroke="white" stroke-width="1.5" fill="none"/>
+    </svg>
+
+    <span class="text-sm font-medium">Instagram</span>
+</a>
                 </div>
 
             </div>
@@ -859,55 +618,15 @@ onclick="openLightbox(this)">
     </footer>
 
 <script>
-    // ==================== LIGHTBOX ====================
-    function openLightbox(img) {
-        document.getElementById('lightbox-image').src = img.src;
-        document.getElementById('lightbox').classList.remove('hidden');
-        document.getElementById('lightbox').classList.add('flex');
+
+      // ==================== burger ====================
+
+    function toggleMobileMenu() {
+        document.getElementById('mobile-menu').classList.toggle('hidden');
     }
 
-    function closeLightbox() {
-        document.getElementById('lightbox').classList.add('hidden');
-        document.getElementById('lightbox').classList.remove('flex');
-    }
+    document.getElementById('mobile-menu-button').addEventListener('click', toggleMobileMenu);
 
-    // ESC-Taste
-    document.addEventListener('keydown', (e) => {
-        if (e.key === "Escape") closeLightbox();
-    });
-
-    // ==================== FILTER FUNKTION ====================
-    function filterCategory(category) {
-        const items = document.querySelectorAll('.gallery-item');
-        const buttons = document.querySelectorAll('#portfolio button');
-
-        // Alle Buttons zurücksetzen
-        buttons.forEach(btn => {
-            btn.classList.remove('active-filter', 'bg-amber-400/10', 'border-amber-400');
-        });
-
-        // Aktiven Button hervorheben
-        const activeButton = Array.from(buttons).find(btn => 
-            btn.getAttribute('onclick').includes(`'${category}'`)
-        );
-        if (activeButton) {
-            activeButton.classList.add('active-filter', 'bg-amber-400/10', 'border-amber-400');
-        }
-
-        // Bilder filtern
-        items.forEach(item => {
-            if (category === 'all') {
-                item.style.display = 'block';
-            } else {
-                item.style.display = (item.getAttribute('data-category') === category) ? 'block' : 'none';
-            }
-        });
-    }
-
-    // Initiales Laden (ohne Event)
-    document.addEventListener('DOMContentLoaded', () => {
-        filterCategory('all');
-    });
 </script>
 
 

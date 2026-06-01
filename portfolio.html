@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Grundlegende SEO -->
+    <title>SchwarzLicht PHOTOGRAPHY | Hochzeitsfotograf Waldkirchen & Niederbayern</title>
+    <meta name="description" content="Emotionale Hochzeitsfotografie, authentische Business-Porträts und Event-Fotografie im Bayerischen Wald. Natürliches Licht und echte Geschichten. Jetzt anfragen.">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="SchwarzLicht PHOTOGRAPHY - Hochzeitsfotograf Waldkirchen">
+    <meta property="og:description" content="Emotionale Hochzeitsfotografie, Business-Porträts und Event-Fotografie im Bayerischen Wald.">
+    <meta property="og:image" content="https://schwarzlichtphotography.com/public/bilder/og-image.jpg">
+    <meta property="og:url" content="https://schwarzlichtphotography.com">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="de_DE">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SchwarzLicht PHOTOGRAPHY - Hochzeitsfotograf Waldkirchen">
+    <meta name="twitter:description" content="Emotionale Hochzeitsfotografie, Business-Porträts und Event-Fotografie im Bayerischen Wald.">
+    <meta name="twitter:image" content="https://schwarzlichtphotography.com/public/bilder/og-image.jpg">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://schwarzlichtphotography.com">
+
+   <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: system-ui, sans-serif; }
+    </style>
+
+    <style>
+    body { font-family: system-ui, sans-serif; }
+    
+    /* Verhindert Scrollen der Hauptseite wenn Menü offen */
+    body.menu-open {
+        overflow: hidden;
+    }
+</style>
+</head>
+
+
+<body class="bg-zinc-950 text-zinc-100">
+
+<!-- Header -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-zinc-950/90 backdrop-blur-md border-b border-zinc-800">
+    <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+        <a href="index.html" class="flex items-center gap-4">
+            <img src="public/logo.png" alt="SchwarzLicht PHOTOGRAPHY" class="h-16 w-auto">
+        </a>
+
+        <nav class="hidden md:flex gap-8 text-sm uppercase tracking-widest">
+            <a href="#portfolio" class="hover:text-amber-400 transition">Portfolio</a>
+            <a href="index.html#ueber-mich" class="hover:text-amber-400 transition">Über mich</a>
+            <a href="kontakt.html" class="hover:text-amber-400 transition">Kontakt</a>
+        </nav>
+
+        <a href="tel:+4915232741548" class="hidden md:block bg-white text-zinc-950 px-8 py-4 rounded-full font-medium hover:bg-amber-400 transition">
+            Jetzt anrufen
+        </a>
+
+        <button id="mobile-menu-button" class="md:hidden text-4xl text-white">
+            ☰
+        </button>
+    </div>
+
+    <!-- Fullscreen Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden fixed inset-0 bg-zinc-950/95 z-[9999] pt-32 px-6 overflow-y-autoflex items-center justify-center">
+        
+        <!-- Dieser Div sorgt für einen 100% undurchsichtigen Hintergrund -->
+    <div class="absolute inset-0 bg-zinc-950"></div>
+        
+        <div class="flex flex-col items-center gap-10 text-3xl uppercase tracking-widest text-center">
+            <a href="#portfolio" onclick="toggleMobileMenu()" class="hover:text-amber-400 py-3">Portfolio</a>
+            <a href="index.html#ueber-mich" onclick="toggleMobileMenu()" class="hover:text-amber-400 py-3">Über mich</a>
+            <a href="kontakt.html" onclick="toggleMobileMenu()" class="hover:text-amber-400 py-3">Kontakt</a>
+            
+            <a href="tel:+4915232741548" onclick="toggleMobileMenu()" 
+               class="mt-12 bg-white text-zinc-950 px-16 py-7 rounded-2xl font-medium text-xl hover:bg-amber-400 transition">
+                Jetzt anrufen
+            </a>
+        </div>
+
+        <button onclick="toggleMobileMenu()" 
+                class="absolute top-8 right-8 text-5xl text-zinc-400 hover:text-white">
+            ✕
+        </button>
+    </div>
+</header>
+
+    <!-- Hero -->
+   
+
+       <!-- PORTFOLIO -->
+<section class="pt-28 pb-24 bg-zinc-900">
+    <div class="max-w-7xl mx-auto px-6">
+
+        <!-- 1. HOCHZEITEN -->
+        <div class="mb-28">
+            <h3 class="text-4xl flex justify-center md:text-5xl font-medium text-amber-400 tracking-tighter mt-16 mb-8 pb-6 border-b border-zinc-700">
+    Hochzeiten
+</h3>
+            
+            <!-- Titelbild Hochzeiten -->
+            <div class="mb-12">
+                <img src="public/bilder/hochzeit/hochzeit-1-Web-Export (WebP)-3.jpg" 
+                     alt="Extreme Nahaufnahme der blauen Augen einer Braut mit langen Wimpern"
+                     class="w-full aspect-video object-cover rounded-3xl shadow-2xl">
+            </div>
+
+            <!-- Hochzeits-Galerie -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-10">
+                <div class="gallery-item">
+                    <img src="public/bilder/hochzeit/hochzeit-1-Web-Export (WebP)-7.jpg" alt="Brautpaar von hinten auf Holzbrücke, Spitzenkleid mit langer Schleppe, blickt in nebligen Wald" class="w-full aspect-[4/5] object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer" onclick="openLightbox(this)" tabindex="0" role="button" aria-label="Foto öffnen: Brautpaar von hinten auf Holzbrücke im Nebel" onkeydown="if(event.key === 'Enter') openLightbox(this)">
+                </div>
+                <div class="gallery-item">
+                    <img src="public/bilder/hochzeit/hochzeit-2.jpg" alt="Brautpaar-Hände übereinandergelegt, Ring mit drei Diamantsteinen am Damenfinger" class="w-full aspect-[4/5] object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer" onclick="openLightbox(this)" tabindex="0" role="button" aria-label="Foto öffnen: Brautpaar-Hände mit Eheringen" onkeydown="if(event.key === 'Enter') openLightbox(this)">
+                </div>
+                <div class="gallery-item">
+                    <img src="public/bilder/hochzeit/hochzeit-1-Web-Export (WebP)-5.jpg" alt="Detail Bräutigam-Anstecker mit gelber Rose und Eukalyptus am grauen Anzug" class="w-full aspect-[4/5] object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer" onclick="openLightbox(this)" tabindex="0" role="button" aria-label="Foto öffnen: Detail Bräutigam-Anstecker mit gelber Rose" onkeydown="if(event.key === 'Enter') openLightbox(this)">
+                </div>
+                <div class="gallery-item">
+                    <img src="public/bilder/hochzeit/hochzeit-4.jpg" alt="Brautpaar in bayerischer Tracht steht im Türrahmen eines alten Bauernhofs" class="w-full aspect-[4/5] object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer" onclick="openLightbox(this)" tabindex="0" role="button" aria-label="Foto öffnen: Brautpaar in bayerischer Tracht" onkeydown="if(event.key === 'Enter') openLightbox(this)">
+                </div>
+                <div class="gallery-item">
+                    <img src="public/bilder/hochzeit/hochzeit-3.jpg" alt="Brautpaar lacht sich auf Wendeltreppe an, Aufnahme von oben in Schwarz-Weiß" class="w-full aspect-[4/5] object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer" onclick="openLightbox(this)" tabindex="0" role="button" aria-label="Foto öffnen: Brautpaar auf Wendeltreppe" onkeydown="if(event.key === 'Enter') openLightbox(this)">
+                </div>
+                <div class="gallery-item">
+                    <img src="public/bilder/hochzeit/hochzeit-1-Web-Export (WebP)-4.jpg" alt="Brautpaar mit Familie an rustikalem Holztisch vor Bauernhof in herbstlicher Sonne" class="w-full aspect-[4/5] object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer" onclick="openLightbox(this)" tabindex="0" role="button" aria-label="Foto öffnen: Brautpaar mit Familie am Holztisch" onkeydown="if(event.key === 'Enter') openLightbox(this)">
+                </div>
+                <div class="gallery-item">
+                    <img src="public/bilder/hochzeit/hochzeit-1-Web-Export (WebP)-2.jpg" alt="Brautpaar mit transparentem Schirm im Park, bunte Herbstblätter fliegen wirbelnd umher" class="w-full aspect-[4/5] object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer" onclick="openLightbox(this)" tabindex="0" role="button" aria-label="Foto öffnen: Brautpaar mit Regenschirm im Herbstpark" onkeydown="if(event.key === 'Enter') openLightbox(this)">
+                </div>
+                <div class="gallery-item">
+                    <img src="public/bilder/hochzeit/hochzeit-1.jpg" alt="Brautpaar steht händchenhaltend auf Burgtreppe unter alter Gaslaterne und schaut sich an" class="w-full aspect-[4/5] object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer" onclick="openLightbox(this)" tabindex="0" role="button" aria-label="Foto öffnen: Brautpaar auf Burgtreppe" onkeydown="if(event.key === 'Enter') openLightbox(this)">
+                </div>
+                <div class="gallery-item">
+                    <img src="public/bilder/hochzeit/1.jpg" alt="Brautpaar von hinten umarmt, Bräutigam in grauem Sakko, Braut mit Blumenhaarschmuck, schwarz-weiß" class="w-full aspect-[4/5] object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer" onclick="openLightbox(this)" tabindex="0" role="button" aria-label="Foto öffnen: Brautpaar umarmt in Schwarz-Weiß" onkeydown="if(event.key === 'Enter') openLightbox(this)">
+                </div>
+                <div class="gallery-item">
+                    <img src="public/bilder/hochzeit/2.jpg" alt="Vierköpfige Familie in weißer Kleidung hockt auf Stein im sonnig-grünen Wald" class="w-full aspect-[4/5] object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer" onclick="openLightbox(this)" tabindex="0" role="button" aria-label="Foto öffnen: Familie im Wald" onkeydown="if(event.key === 'Enter') openLightbox(this)">
+                </div>
+                <div class="gallery-item">
+                    <img src="public/bilder/hochzeit/3.jpg" alt="Brautpaar lacht sich auf Wendeltreppe an, Aufnahme von oben in Schwarz-Weiß" class="w-full aspect-[4/5] object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer" onclick="openLightbox(this)" tabindex="0" role="button" aria-label="Foto öffnen: Brautpaar auf Wendeltreppe" onkeydown="if(event.key === 'Enter') openLightbox(this)">
+                </div>
+                <div class="gallery-item">
+                    <img src="public/bilder/hochzeit/4.jpg" alt="Brautpaar in bayerischer Tracht steht im Türrahmen eines alten Bauernhofs" class="w-full aspect-[4/5] object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer" onclick="openLightbox(this)" tabindex="0" role="button" aria-label="Foto öffnen: Brautpaar in bayerischer Tracht" onkeydown="if(event.key === 'Enter') openLightbox(this)">
+                </div>
+                <div class="gallery-item">
+                    <img src="public/bilder/hochzeit/5.jpg" alt="Familie mit Baby steht auf Felsblock im Waldbach, weiches Pastell-Sonnenlicht" class="w-full aspect-[4/5] object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer" onclick="openLightbox(this)" tabindex="0" role="button" aria-label="Foto öffnen: Familie mit Baby am Waldbach" onkeydown="if(event.key === 'Enter') openLightbox(this)">
+                </div>
+                <div class="gallery-item">
+                    <img src="public/bilder/hochzeit/6.jpg" alt="Detail Bräutigam-Anstecker aus Trockenblumen am bordeauxroten Sakko mit floralem Einstecktuch" class="w-full aspect-[4/5] object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer" onclick="openLightbox(this)" tabindex="0" role="button" aria-label="Foto öffnen: Bräutigam-Anstecker mit Trockenblumen" onkeydown="if(event.key === 'Enter') openLightbox(this)">
+                </div>
+                <div class="gallery-item">
+                    <img src="public/bilder/hochzeit/7.jpg" alt="Eltern küssen sich auf Flussstein, kleiner Sohn und Baby zwischen ihnen" class="w-full aspect-[4/5] object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer" onclick="openLightbox(this)" tabindex="0" role="button" aria-label="Foto öffnen: Familie küsst sich auf Stein" onkeydown="if(event.key === 'Enter') openLightbox(this)">
+                </div>
+                <div class="gallery-item">
+                    <img src="public/bilder/hochzeit/8.jpg" alt="Verschlungene Hände eines Brautpaars mit Eheringen vor weißem Rosenstrauß" class="w-full aspect-[4/5] object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer" onclick="openLightbox(this)" tabindex="0" role="button" aria-label="Foto öffnen: Hände mit Eheringen" onkeydown="if(event.key === 'Enter') openLightbox(this)">
+                </div>
+                <div class="gallery-item">
+                    <img src="public/bilder/hochzeit/9.jpg" alt="Brautpaar lacht vor altem mit Blumen bepflanztem Holz-Leiterwagen auf Wiese" class="w-full aspect-[4/5] object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer" onclick="openLightbox(this)" tabindex="0" role="button" aria-label="Foto öffnen: Brautpaar vor Blumen-Leiterwagen" onkeydown="if(event.key === 'Enter') openLightbox(this)">
+                </div>
+                <div class="gallery-item">
+                    <img src="public/bilder/hochzeit/10.jpg" alt="Hochzeitsgesellschaft auf historischer Drehscheibe am Bahnhof Eisenstein, Brautpaar vorne" class="w-full aspect-[4/5] object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer" onclick="openLightbox(this)" tabindex="0" role="button" aria-label="Foto öffnen: Hochzeitsgesellschaft auf Drehscheibe" onkeydown="if(event.key === 'Enter') openLightbox(this)">
+                </div>
+                <div class="gallery-item">
+                    <img src="public/bilder/hochzeit/11.jpg" alt="Zwei Eheringe (Diamantring auf Roségold-Ring) auf Holzbalken vor unscharfer Wiese" class="w-full aspect-[4/5] object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer" onclick="openLightbox(this)" tabindex="0" role="button" aria-label="Foto öffnen: Zwei Eheringe auf Holzbalken" onkeydown="if(event.key === 'Enter') openLightbox(this)">
+                </div>
+                <div class="gallery-item">
+                    <img src="public/bilder/hochzeit/12.jpg" alt="Acht Trauzeugen springen vor altem Steingebäude in die Luft, Braut breitet Arme aus" class="w-full aspect-[4/5] object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer" onclick="openLightbox(this)" tabindex="0" role="button" aria-label="Foto öffnen: Trauzeugen springen in die Luft" onkeydown="if(event.key === 'Enter') openLightbox(this)">
+                </div>
+                <div class="gallery-item">
+                    <img src="public/bilder/hochzeit/13.jpg" alt="Brautpaar als Silhouette unter Burgtorbogen, beide werfen jubelnd die Hände hoch" class="w-full aspect-[4/5] object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer" onclick="openLightbox(this)" tabindex="0" role="button" aria-label="Foto öffnen: Brautpaar als Silhouette unter Burgtor" onkeydown="if(event.key === 'Enter') openLightbox(this)">
+                </div>
+                <div class="gallery-item">
+                    <img src="public/bilder/hochzeit/14.jpg" alt="Glitzerndes Brautkleid auf goldenem Bügel vor abendlichem Sprossenfenster, von hinten beleuchtet" class="w-full aspect-[4/5] object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer" onclick="openLightbox(this)" tabindex="0" role="button" aria-label="Foto öffnen: Brautkleid auf Bügel" onkeydown="if(event.key === 'Enter') openLightbox(this)">
+                </div>
+                <div class="gallery-item">
+                    <img src="public/bilder/hochzeit/15.jpg" alt="Getigerte Katze schnuppert an Trockenblumen-Brautstrauß auf bemoster Steinkante" class="w-full aspect-[4/5] object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer" onclick="openLightbox(this)" tabindex="0" role="button" aria-label="Foto öffnen: Katze mit Brautstrauß" onkeydown="if(event.key === 'Enter') openLightbox(this)">
+                </div>
+                <div class="gallery-item">
+                    <img src="public/bilder/hochzeit/16.jpg" alt="Brautpaar entspannt aneinander gelehnt auf antikem goldenen Sofa im Schloss-Salon" class="w-full aspect-[4/5] object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer" onclick="openLightbox(this)" tabindex="0" role="button" aria-label="Foto öffnen: Brautpaar auf antikem Sofa" onkeydown="if(event.key === 'Enter') openLightbox(this)">
+                </div>
+                <div class="gallery-item">
+                    <img src="public/bilder/hochzeit/17.jpg" alt="Detail-Porträt Braut mit Perlenkette blickt nach oben, Bräutigam unscharf im Hintergrund" class="w-full aspect-[4/5] object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer" onclick="openLightbox(this)" tabindex="0" role="button" aria-label="Foto öffnen: Detail-Porträt Braut mit Perlenkette" onkeydown="if(event.key === 'Enter') openLightbox(this)">
+                </div>
+                <div class="gallery-item">
+                    <img src="public/bilder/hochzeit/18.jpg" alt="Brautpaar küsst sich unter Bogen aus herbstlich gefärbten Weinblättern im Park" class="w-full aspect-[4/5] object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer" onclick="openLightbox(this)" tabindex="0" role="button" aria-label="Foto öffnen: Brautpaar küsst sich unter Weinbogen" onkeydown="if(event.key === 'Enter') openLightbox(this)">
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. BUSINESS & PORTRÄTS -->
+        <div class="mb-28">
+            <h3 class="text-4xl md:text-5xl flex justify-center font-medium text-amber-400 tracking-tighter mt-16 mb-8 pb-6 border-b border-zinc-700">
+    Business & Porträts
+</h3>
+            
+            <!-- Titelbild Business -->
+            <div class="mb-12">
+                <img src="public/bilder/business/7.jpg" 
+                     alt="Profil-Porträt einer dreiköpfigen Familie nebeneinander in warmem Seitenlicht"
+                     class="w-full aspect-video object-cover rounded-3xl shadow-2xl">
+            </div>
+
+            <!-- Business-Galerie -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-10">
+                <div class="gallery-item">
+                    <img src="public/bilder/business/business-1.jpg" alt="Älterer Geschäftsmann mit blauer Brille, grauem Sakko und kariertem Hemd" class="w-full aspect-[4/5] object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer" onclick="openLightbox(this)" tabindex="0" role="button" aria-label="Foto öffnen: Älterer Geschäftsmann mit blauer Brille" onkeydown="if(event.key === 'Enter') openLightbox(this)">
+                </div>
+                <div class="gallery-item">
+                    <img src="public/bilder/business/business-2.jpg" alt="Lachende Frau mit lockigem braunem Haar in beiger Strickbluse vor blauem Hintergrund" class="w-full aspect-[4/5] object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer" onclick="openLightbox(this)" tabindex="0" role="button" aria-label="Foto öffnen: Lachende Frau mit lockigem Haar" onkeydown="if(event.key === 'Enter') openLightbox(this)">
+                </div>
+                <div class="gallery-item">
+                    <img src="public/bilder/business/3.jpg" alt="Junge Frau mit blauem Strickpullover und goldener Münz-Halskette vor grauem Studiohintergrund" class="w-full aspect-[4/5] object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer" onclick="openLightbox(this)" tabindex="0" role="button" aria-label="Foto öffnen: Junge Frau mit blauem Pullover" onkeydown="if(event.key === 'Enter') openLightbox(this)">
+                </div>
+                <div class="gallery-item">
+                    <img src="public/bilder/business/4.jpg" alt="Lächelnde junge Frau in gepunktetem Kleid mit langen welligen Haaren, Studio-Porträt" class="w-full aspect-[4/5] object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer" onclick="openLightbox(this)" tabindex="0" role="button" aria-label="Foto öffnen: Junge Frau in gepunktetem Kleid" onkeydown="if(event.key === 'Enter') openLightbox(this)">
+                </div>
+                <div class="gallery-item">
+                    <img src="public/bilder/business/5.jpg" alt="Lächelnde Frau mit Zopf und blauem Strickpullover vor grauem Studiohintergrund" class="w-full aspect-[4/5] object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer" onclick="openLightbox(this)" tabindex="0" role="button" aria-label="Foto öffnen: Frau mit Zopf und blauem Pullover" onkeydown="if(event.key === 'Enter') openLightbox(this)">
+                </div>
+                <div class="gallery-item">
+                    <img src="public/bilder/business/6.jpg" alt="Lachender Mann mit Smoking, Fliege und gemustertem Kragen in dramatischer Low-Key-Beleuchtung" class="w-full aspect-[4/5] object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer" onclick="openLightbox(this)" tabindex="0" role="button" aria-label="Foto öffnen: Mann im Smoking Low-Key" onkeydown="if(event.key === 'Enter') openLightbox(this)">
+                </div>
+                <div class="gallery-item">
+                    <img src="public/bilder/business/8.jpg" alt="Geschäftsmann mit Vollbart, dunklem Sakko und weißem Hemd, freundliches Headshot-Lächeln" class="w-full aspect-[4/5] object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer" onclick="openLightbox(this)" tabindex="0" role="button" aria-label="Foto öffnen: Geschäftsmann mit Vollbart" onkeydown="if(event.key === 'Enter') openLightbox(this)">
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. EVENTS -->
+        <div class="mb-20">
+    <h3 class="text-4xl md:text-5xl flex justify-center font-medium text-amber-400 tracking-tighter 
+               mt-16 mb-8 pb-6 border-b border-zinc-700">
+        Events
+    </h3>
+            
+            <!-- Titelbild Events -->
+            <div class="mb-12">
+                <img src="public/bilder/event/13.jpg" 
+                     alt="Mountainbiker fährt mit erhobenen Armen unter Hervis-Sports-Zielbogen ins Ziel"
+                     class="w-full aspect-video object-cover rounded-3xl shadow-2xl">
+            </div>
+
+         <!-- Events-Galerie -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-10">
+<div class="gallery-item">
+                    <img src="public/bilder/event/1.jpg" alt="Hyundai i20 Rallye-Auto in rot-blauer WRC-Lackierung auf herbstlicher Waldstraße" class="w-full aspect-video object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer" onclick="openLightbox(this)" tabindex="0" role="button" aria-label="Foto öffnen: Hyundai Rallye-Auto auf Waldstraße" onkeydown="if(event.key === 'Enter') openLightbox(this)">
+                </div>
+                <div class="gallery-item">
+                    <img src="public/bilder/event/2.jpg" alt="Mountainbiker im Downhill-Sprung über Waldboden, farbiges Bike vor schwarz-weißem Wald" class="w-full aspect-video object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer" onclick="openLightbox(this)" tabindex="0" role="button" aria-label="Foto öffnen: Mountainbiker im Sprung" onkeydown="if(event.key === 'Enter') openLightbox(this)">
+                </div>
+                <div class="gallery-item">
+                    <img src="public/bilder/event/3.jpg" alt="Skoda Fabia Rallye-Auto mit gelb-roter Lackierung im herbstlichen Nadelwald" class="w-full aspect-video object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer" onclick="openLightbox(this)" tabindex="0" role="button" aria-label="Foto öffnen: Skoda Rallye-Auto im Wald" onkeydown="if(event.key === 'Enter') openLightbox(this)">
+                </div>
+                <div class="gallery-item">
+                    <img src="public/bilder/event/4.jpg" alt="Orange-blaues Hyundai-Rallye-Auto auf engem Waldweg, Herbstlaub am Boden" class="w-full aspect-video object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer" onclick="openLightbox(this)" tabindex="0" role="button" aria-label="Foto öffnen: Hyundai Rallye-Auto auf Waldweg" onkeydown="if(event.key === 'Enter') openLightbox(this)">
+                </div>
+                <div class="gallery-item">
+                    <img src="public/bilder/event/5.jpg" alt="Frontansicht eines WRC-Hyundai-Rallyeautos beim Anbremsen, Laub wirbelt unter dem Wagen" class="w-full aspect-video object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer" onclick="openLightbox(this)" tabindex="0" role="button" aria-label="Foto öffnen: Hyundai Rallye-Auto Frontansicht" onkeydown="if(event.key === 'Enter') openLightbox(this)">
+                </div>
+                <div class="gallery-item">
+                    <img src="public/bilder/event/6.jpg" alt="M-Sport Ford Puma Rally1 Heckansicht in Red-Bull-Design vor herbstlicher Allee" class="w-full aspect-video object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer" onclick="openLightbox(this)" tabindex="0" role="button" aria-label="Foto öffnen: Ford Puma Rallye Heckansicht" onkeydown="if(event.key === 'Enter') openLightbox(this)">
+                </div>
+                <div class="gallery-item">
+                    <img src="public/bilder/event/7.jpg" alt="Grün-weiß lackierter Skoda Fabia Rallye-Wagen in schneller Kurvenfahrt" class="w-full aspect-video object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer" onclick="openLightbox(this)" tabindex="0" role="button" aria-label="Foto öffnen: Skoda Fabia Rallye in Kurve" onkeydown="if(event.key === 'Enter') openLightbox(this)">
+                </div>
+                <div class="gallery-item">
+                    <img src="public/bilder/event/8.jpg" alt="Mountainbike-Marathonfahrer trinkt aus Powerbar-Becher, frische Schürfwunde am Arm" class="w-full aspect-video object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer" onclick="openLightbox(this)" tabindex="0" role="button" aria-label="Foto öffnen: Mountainbiker trinkt bei Verpflegung" onkeydown="if(event.key === 'Enter') openLightbox(this)">
+                </div>
+                <div class="gallery-item">
+                    <img src="public/bilder/event/9.jpg" alt="Schwitzender Rennradfahrer kippt Becher beim Fahren, blutige Schürfwunde am Oberarm" class="w-full aspect-video object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer" onclick="openLightbox(this)" tabindex="0" role="button" aria-label="Foto öffnen: Rennradfahrer mit Verletzung" onkeydown="if(event.key === 'Enter') openLightbox(this)">
+                </div>
+                <div class="gallery-item">
+                    <img src="public/bilder/event/10.jpg" alt="Helfer reicht Becher an Mountainbike-Fahrer beim Vorbeifahren an einer Trinkstation" class="w-full aspect-video object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer" onclick="openLightbox(this)" tabindex="0" role="button" aria-label="Foto öffnen: Verpflegungsstation Mountainbike" onkeydown="if(event.key === 'Enter') openLightbox(this)">
+                </div>
+                <div class="gallery-item">
+                    <img src="public/bilder/event/11.jpg" alt="Lachende Mountainbikerin wird im Rennen mit einem Wasserschlauch abgekühlt" class="w-full aspect-video object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer" onclick="openLightbox(this)" tabindex="0" role="button" aria-label="Foto öffnen: Mountainbikerin wird abgekühlt" onkeydown="if(event.key === 'Enter') openLightbox(this)">
+                </div>
+                <div class="gallery-item">
+                    <img src="public/bilder/event/12.jpg" alt="Mountainbiker fährt eine Holztreppen-Passage vor steiler Felswand hinunter" class="w-full aspect-video object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer" onclick="openLightbox(this)" tabindex="0" role="button" aria-label="Foto öffnen: Mountainbiker auf Holztreppe" onkeydown="if(event.key === 'Enter') openLightbox(this)">
+                </div>
+                <div class="gallery-item">
+                    <img src="public/bilder/event/14.jpg" alt="Profi-Mountainbiker im Bora-hansgrohe-Trikot rollt nach dem Rennen über die Ziellinie" class="w-full aspect-video object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer" onclick="openLightbox(this)" tabindex="0" role="button" aria-label="Foto öffnen: Bora-hansgrohe Mountainbiker im Ziel" onkeydown="if(event.key === 'Enter') openLightbox(this)">
+                </div>
+                <div class="gallery-item">
+                    <img src="public/bilder/event/15.jpg" alt="Junger Mountainbiker im Texpa-Trikot wird mit Trophy-Mikrofon interviewt" class="w-full aspect-video object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer" onclick="openLightbox(this)" tabindex="0" role="button" aria-label="Foto öffnen: Mountainbiker wird interviewt" onkeydown="if(event.key === 'Enter') openLightbox(this)">
+                </div>
+                <div class="gallery-item">
+                    <img src="public/bilder/event/16.jpg" alt="Breakdancer in akrobatischer Bodenpose vor schummrig beleuchtetem Galapublikum" class="w-full aspect-video object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer" onclick="openLightbox(this)" tabindex="0" role="button" aria-label="Foto öffnen: Breakdancer auf Bühne" onkeydown="if(event.key === 'Enter') openLightbox(this)">
+                </div>
+                <div class="gallery-item">
+                    <img src="public/bilder/event/17.jpg" alt="Sängerin mit Hut, Brille und pinkem Blazer auf Bühne, Gitarre umgehängt" class="w-full aspect-video object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer" onclick="openLightbox(this)" tabindex="0" role="button" aria-label="Foto öffnen: Sängerin mit Gitarre" onkeydown="if(event.key === 'Enter') openLightbox(this)">
+                </div>
+                <div class="gallery-item">
+                    <img src="public/bilder/event/18.jpg" alt="Luftakrobatin am Vertikalreifen vor schwarzem Bühnenhimmel mit Sonnen-Projektion" class="w-full aspect-video object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer" onclick="openLightbox(this)" tabindex="0" role="button" aria-label="Foto öffnen: Luftakrobatin am Vertikalreifen" onkeydown="if(event.key === 'Enter') openLightbox(this)">
+                </div>
+                <div class="gallery-item">
+                    <img src="public/bilder/event/19.jpg" alt="Akrobatin kopfüber an gelbem Vertikaltuch unter dunklem Hallendach" class="w-full aspect-video object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-500 cursor-pointer" onclick="openLightbox(this)" tabindex="0" role="button" aria-label="Foto öffnen: Akrobatin am Vertikaltuch" onkeydown="if(event.key === 'Enter') openLightbox(this)">
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- ==================== LIGHTBOX - Fast Fullscreen ==================== -->
+<div id="lightbox" class="hidden fixed inset-0 bg-black/95 z-[100] flex items-center justify-center p-2">
+    <div class="relative w-full h-full max-w-[98vw] max-h-[98vh] flex items-center justify-center">
+        
+        <button onclick="closeLightbox()"
+                class="absolute top-6 right-6 bg-zinc-900/80 hover:bg-red-600 text-white w-14 h-14 rounded-full flex items-center justify-center text-3xl transition z-10">
+            ✕
+        </button>
+        
+        <img id="lightbox-image" src="" alt="" 
+             class="max-w-[98vw] max-h-[98vh] object-contain rounded-2xl shadow-2xl"
+             tabindex="0">
+    </div>
+</div>
+
+    <script>
+        function openLightbox(img) {
+            document.getElementById('lightbox-image').src = img.src;
+            document.getElementById('lightbox').classList.remove('hidden');
+            document.getElementById('lightbox').classList.add('flex');
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.add('hidden');
+            document.getElementById('lightbox').classList.remove('flex');
+        }
+
+        // ESC-Taste zum Schließen
+        document.addEventListener('keydown', (e) => {
+            if (e.key === "Escape") closeLightbox();
+        });
+    </script>
+
+
+     
+  <section class="min-h-screen flex items-center justify-center pt-20 text-center px-6">
+        <div class="max-w-5xl">
+            <h1 class="text-6xl md:text-7xl tracking-tighter leading-none mb-8">
+                Licht schreibt die Geschichte.<br>
+                <span class="text-amber-400">Ich halte sie fest.</span>
+            </h1>
+            <p class="text-2xl text-zinc-400 mb-12">
+                Hochzeit • Porträts • Events<br>
+                Waldkirchen  (im Woid)
+            
+            </p>
+            <a href="index.html#ablauf" class="inline-block bg-white text-zinc-950 px-12 py-5 rounded-full text-xl font-medium hover:bg-amber-400">
+                Wie läuft ein Shooting ab?
+            </a>
+        </div>
+    </section>
+
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="bg-black py-16 border-t border-zinc-800">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-12">
+
+                <!-- Linke Spalte - Logo + Claim (zentriert) -->
+                <div class="md:text-left text-center">
+                    <img src="public/logo.png" alt="SchwarzLicht PHOTOGRAPHY" class="h-48 w-auto mx-auto md:mx-0 mb-6">
+                    <p class="text-zinc-400 text-sm leading-relaxed">
+                        Licht schreibt die Geschichte.<br>
+                        Ich halte sie fest.
+                    </p>
+                </div>
+
+                <!-- Mittlere Spalte - Navigation -->
+                <div>
+                    <h4 class="text-white uppercase tracking-widest text-sm mb-6 md:text-left text-center">Navigation</h4>
+                    <div class="flex flex-col gap-3 text-sm md:items-start items-center">
+                        <a href="#portfolio" class="text-zinc-400 hover:text-white transition">Portfolio</a>
+                        <a href="index.html#ueber-mich" class="text-zinc-400 hover:text-white transition">Über mich</a>
+                        <a href="index.html#philosophie" class="text-zinc-400 hover:text-white transition">Philosophie</a>
+                        <a href="index.html#ablauf" class="text-zinc-400 hover:text-white transition">Shooting-Ablauf</a>
+                        <a href="index.html#preise" class="text-zinc-400 hover:text-white transition">Preise</a>
+                        <a href="index.html#bewertungen" class="text-zinc-400 hover:text-white transition">Kundenstimmen</a>
+                    </div>
+                </div>
+
+                <!-- Rechte Spalte - Kontakt + Social -->
+                <div>
+                    <h4 class="text-white uppercase tracking-widest text-sm mb-6 md:text-left text-center">Kontakt</h4>
+                    
+                    <a href="tel:+4915232741548" class="block text-zinc-400 hover:text-white transition mb-2 md:text-left text-center">
+                        +49 152 32741548
+                    </a>
+                    <a href="mailto:schwarzhannes@icloud.com" class="block text-zinc-400 hover:text-white transition mb-8 md:text-left text-center">
+                        schwarzhannes@icloud.com
+                    </a>
+
+                    <!-- Adresse mit Maps -->
+                    <a href="https://www.google.com/maps/place/SchwarzLicht+Photography/@48.7289437,13.5904603,2647m/data=!3m1!1e3!4m15!1m8!3m7!1s0x4774ed827be5a21f:0x50a2f0c1df07ac3a!2sBüchl+20,+94065+Waldkirchen!3b1!8m2!3d48.72893!4d13.60076!16s%2Fg%2F11rp2lk_w0!3m5!1s0x4774ed48ab545cc1:0xb66cb0d843a77260!8m2!3d48.728853!4d13.6007265!16s%2Fg%2F11sjcrg38m?entry=ttu&g_ep=EgoyMDI2MDUyNy4wIKXMDSoASAFQAw%3D%3D" 
+                       target="_blank"
+                       class="flex items-start gap-3 text-zinc-400 hover:text-white transition md:justify-start justify-center">
+                        <span class="text-2xl mt-0.5">📍</span>
+                        <div>
+                            <p>Hannes Schwarz</p>
+                            <p>Büchl 20</p>
+                            <p>94065 Waldkirchen</p>
+                        </div>
+                    </a>
+
+                    <!-- Instagram mit Original-Farben -->
+                    <a href="https://www.instagram.com/schwarzlicht_photography/" target="_blank" 
+                       class="mt-10 flex items-center gap-3 text-zinc-400 hover:text-white transition md:justify-start justify-center">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="url(#instagramGradient)">
+                            <defs>
+                                <linearGradient id="instagramGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#f58529"/>
+                                    <stop offset="50%" stop-color="#dd2a7b"/>
+                                    <stop offset="100%" stop-color="#405de6"/>
+                                </linearGradient>
+                            </defs>
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.849.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069z"/>
+                            <circle cx="12" cy="12" r="3.5"/>
+                        </svg>
+                        <span class="text-sm font-medium">@schwarzlicht_photography</span>
+                    </a>
+                </div>
+
+            </div>
+
+            <!-- Unterer Bereich -->
+            <div class="mt-16 pt-8 border-t border-zinc-800 text-center text-xs text-zinc-500">
+                © 2026 SchwarzLicht PHOTOGRAPHY • 
+                <a href="impressum.html" class="hover:text-zinc-300 mx-3">Impressum</a> • 
+                <a href="datenschutz.html" class="hover:text-zinc-300 mx-3">Datenschutz</a> • 
+                <a href="agb.html" class="hover:text-zinc-300 mx-3">AGB</a>
+            </div>
+        </div>
+    </footer>
+
+<script>
+
+      // ==================== burger ====================
+
+    function toggleMobileMenu() {
+        document.getElementById('mobile-menu').classList.toggle('hidden');
+    }
+
+    document.getElementById('mobile-menu-button').addEventListener('click', toggleMobileMenu);
+
+
+
+
+
+// ==================== LIGHTBOX mit voller Tastaturbedienung ====================
+let currentImages = [];
+let currentIndex = 0;
+
+function openLightbox(img) {
+    const category = img.closest('.gallery-item').dataset.category;
+    
+    // Alle Bilder der gleichen Kategorie sammeln
+    currentImages = Array.from(document.querySelectorAll(`.gallery-item[data-category="${category}"] img`));
+    currentIndex = currentImages.indexOf(img);
+
+    const lightboxImg = document.getElementById('lightbox-image');
+    lightboxImg.src = img.src;
+    lightboxImg.alt = img.alt;
+
+    const lightbox = document.getElementById('lightbox');
+    lightbox.classList.remove('hidden');
+    lightbox.classList.add('flex');
+    
+    // Fokus auf das Bild setzen für bessere Barrierefreiheit
+    setTimeout(() => lightboxImg.focus(), 100);
+}
+
+function closeLightbox() {
+    const lightbox = document.getElementById('lightbox');
+    lightbox.classList.add('hidden');
+    lightbox.classList.remove('flex');
+}
+
+// Tastatur-Steuerung
+document.addEventListener('keydown', (e) => {
+    const lightbox = document.getElementById('lightbox');
+    if (lightbox.classList.contains('hidden')) return;
+
+    switch(e.key) {
+        case "Escape":
+            closeLightbox();
+            break;
+        case "ArrowRight":
+            if (currentIndex < currentImages.length - 1) {
+                currentIndex++;
+                document.getElementById('lightbox-image').src = currentImages[currentIndex].src;
+                document.getElementById('lightbox-image').alt = currentImages[currentIndex].alt;
+            }
+            break;
+        case "ArrowLeft":
+            if (currentIndex > 0) {
+                currentIndex--;
+                document.getElementById('lightbox-image').src = currentImages[currentIndex].src;
+                document.getElementById('lightbox-image').alt = currentImages[currentIndex].alt;
+            }
+            break;
+    }
+});
+
+// Klick außerhalb des Bildes schließt Lightbox
+document.getElementById('lightbox').addEventListener('click', function(e) {
+    if (e.target === this) closeLightbox();
+});
+
+
+    // ==================== FILTER FUNKTION ====================
+    function filterCategory(category) {
+        const items = document.querySelectorAll('.gallery-item');
+        const buttons = document.querySelectorAll('#portfolio button');
+
+        // Alle Buttons zurücksetzen
+        buttons.forEach(btn => {
+            btn.classList.remove('active-filter', 'bg-amber-400/10', 'border-amber-400');
+        });
+
+        // Aktiven Button hervorheben
+        const activeButton = Array.from(buttons).find(btn => 
+            btn.getAttribute('onclick').includes(`'${category}'`)
+        );
+        if (activeButton) {
+            activeButton.classList.add('active-filter', 'bg-amber-400/10', 'border-amber-400');
+        }
+
+        // Bilder filtern
+        items.forEach(item => {
+            if (category === 'all') {
+                item.style.display = 'block';
+            } else {
+                item.style.display = (item.getAttribute('data-category') === category) ? 'block' : 'none';
+            }
+        });
+    }
+
+    // Initiales Laden (ohne Event)
+    document.addEventListener('DOMContentLoaded', () => {
+        filterCategory('all');
+    });
+
+
+
+</script>
+
+
+
+</body>
+</html>

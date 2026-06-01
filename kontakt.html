@@ -12,27 +12,51 @@
 <body class="bg-zinc-950 text-zinc-100">
 
     <!-- Header mit deinem Logo -->
-    <header class="fixed top-0 left-0 right-0 z-50 bg-zinc-950/90 backdrop-blur-md border-b border-zinc-800">
-        <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
-            <a href="index.html" class="flex items-center gap-4">
-                <img src="public/logo.png" alt="SchwarzLicht PHOTOGRAPHY" class="h-16 w-auto">
-            </a>
+    <!-- Header -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-zinc-950/90 backdrop-blur-md border-b border-zinc-800">
+    <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+        <a href="index.html" class="flex items-center gap-4">
+            <img src="public/logo.png" alt="SchwarzLicht PHOTOGRAPHY" class="h-16 w-auto">
+        </a>
 
-            <nav class="hidden md:flex gap-8 text-sm uppercase tracking-widest">
-                <a href="index.html#portfolio" class="hover:text-amber-400 transition">Portfolio</a>
- 
-                <a href="index.html#ueber-mich" class="hover:text-amber-400 transition">Über mich</a>
-                
-                <a href="kontakt.html" class="hover:text-amber-400 transition">Kontakt</a>
+        <nav class="hidden md:flex gap-8 text-sm uppercase tracking-widest">
+            <a href="portfolio.html" class="hover:text-amber-400 transition">Portfolio</a>
+            <a href="index.html#ueber-mich" class="hover:text-amber-400 transition">Über mich</a>
+            <a href="kontakt.html" class="hover:text-amber-400 transition">Kontakt</a>
+        </nav>
 
-            </nav>
+        <a href="tel:+4915232741548" class="hidden md:block bg-white text-zinc-950 px-8 py-4 rounded-full font-medium hover:bg-amber-400 transition">
+            Jetzt anrufen
+        </a>
 
-            <a href="tel:+4915232741548" 
-               class="bg-white text-zinc-950 px-8 py-4 rounded-full font-medium hover:bg-amber-400 transition">
+        <button id="mobile-menu-button" class="md:hidden text-4xl text-white">
+            ☰
+        </button>
+    </div>
+
+    <!-- Fullscreen Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden fixed inset-0 bg-zinc-950/95 z-[9999] pt-32 px-6 overflow-y-autoflex items-center justify-center">
+        
+        <!-- Dieser Div sorgt für einen 100% undurchsichtigen Hintergrund -->
+    <div class="absolute inset-0 bg-zinc-950"></div>
+        
+        <div class="flex flex-col items-center gap-10 text-3xl uppercase tracking-widest text-center">
+            <a href="portfolio.html" onclick="toggleMobileMenu()" class="hover:text-amber-400 py-3">Portfolio</a>
+            <a href="index.html#ueber-mich" onclick="toggleMobileMenu()" class="hover:text-amber-400 py-3">Über mich</a>
+            <a href="kontakt.html" onclick="toggleMobileMenu()" class="hover:text-amber-400 py-3">Kontakt</a>
+            
+            <a href="tel:+4915232741548" onclick="toggleMobileMenu()" 
+               class="mt-12 bg-white text-zinc-950 px-16 py-7 rounded-2xl font-medium text-xl hover:bg-amber-400 transition">
                 Jetzt anrufen
             </a>
         </div>
-    </header>
+
+        <button onclick="toggleMobileMenu()" 
+                class="absolute top-8 right-8 text-5xl text-zinc-400 hover:text-white">
+            ✕
+        </button>
+    </div>
+</header>
 
   
 
@@ -75,7 +99,7 @@
     <!-- Adresse mit Google Maps Link -->
     <div class="flex items-center gap-5">
         <div class="w-7 h-7 flex items-center justify-center text-amber-400 text-2xl">📍</div>
-        <a href="https://www.google.com/maps/search/?api=1&query=Büchl+20+94065+Waldkirchen" 
+        <a href="https://www.google.com/maps/place/SchwarzLicht+Photography/@48.7289437,13.5904603,2647m/data=!3m1!1e3!4m15!1m8!3m7!1s0x4774ed827be5a21f:0x50a2f0c1df07ac3a!2sBüchl+20,+94065+Waldkirchen!3b1!8m2!3d48.72893!4d13.60076!16s%2Fg%2F11rp2lk_w0!3m5!1s0x4774ed48ab545cc1:0xb66cb0d843a77260!8m2!3d48.728853!4d13.6007265!16s%2Fg%2F11sjcrg38m?entry=ttu&g_ep=EgoyMDI2MDUyNy4wIKXMDSoASAFQAw%3D%3D" 
            target="_blank"
            class="text-xl font-light tracking-tight hover:text-amber-400 transition">
             Hannes Schwarz<br>
@@ -144,6 +168,18 @@
         </div>
     </footer>
 
+
+    <script>
+
+         // ==================== burger ====================
+
+    function toggleMobileMenu() {
+        document.getElementById('mobile-menu').classList.toggle('hidden');
+    }
+
+    document.getElementById('mobile-menu-button').addEventListener('click', toggleMobileMenu);
+
+    </script>
 
 </body>
 </html>
