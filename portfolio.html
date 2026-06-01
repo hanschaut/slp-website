@@ -71,7 +71,7 @@
         <!-- Dieser Div sorgt für einen 100% undurchsichtigen Hintergrund -->
     <div class="absolute inset-0 bg-zinc-950"></div>
         
-        <div class="flex flex-col items-center gap-10 text-3xl uppercase tracking-widest text-center">
+        <div class="flex flex-col items-center gap-10 text-2xl uppercase tracking-widest text-center">
             <a href="#portfolio" onclick="toggleMobileMenu()" class="hover:text-amber-400 py-3">Portfolio</a>
             <a href="index.html#ueber-mich" onclick="toggleMobileMenu()" class="hover:text-amber-400 py-3">Über mich</a>
             <a href="kontakt.html" onclick="toggleMobileMenu()" class="hover:text-amber-400 py-3">Kontakt</a>
@@ -452,67 +452,50 @@
 
 
 
+  // ==================== lightbox ====================
 
-
-// ==================== LIGHTBOX mit voller Tastaturbedienung ====================
 let currentImages = [];
-let currentIndex = 0;
+    let currentIndex = 0;
 
-function openLightbox(img) {
-    const category = img.closest('.gallery-item').dataset.category;
-    
-    // Alle Bilder der gleichen Kategorie sammeln
-    currentImages = Array.from(document.querySelectorAll(`.gallery-item[data-category="${category}"] img`));
-    currentIndex = currentImages.indexOf(img);
-
-    const lightboxImg = document.getElementById('lightbox-image');
-    lightboxImg.src = img.src;
-    lightboxImg.alt = img.alt;
-
-    const lightbox = document.getElementById('lightbox');
-    lightbox.classList.remove('hidden');
-    lightbox.classList.add('flex');
-    
-    // Fokus auf das Bild setzen für bessere Barrierefreiheit
-    setTimeout(() => lightboxImg.focus(), 100);
-}
-
-function closeLightbox() {
-    const lightbox = document.getElementById('lightbox');
-    lightbox.classList.add('hidden');
-    lightbox.classList.remove('flex');
-}
-
-// Tastatur-Steuerung
-document.addEventListener('keydown', (e) => {
-    const lightbox = document.getElementById('lightbox');
-    if (lightbox.classList.contains('hidden')) return;
-
-    switch(e.key) {
-        case "Escape":
-            closeLightbox();
-            break;
-        case "ArrowRight":
-            if (currentIndex < currentImages.length - 1) {
-                currentIndex++;
-                document.getElementById('lightbox-image').src = currentImages[currentIndex].src;
-                document.getElementById('lightbox-image').alt = currentImages[currentIndex].alt;
-            }
-            break;
-        case "ArrowLeft":
-            if (currentIndex > 0) {
-                currentIndex--;
-                document.getElementById('lightbox-image').src = currentImages[currentIndex].src;
-                document.getElementById('lightbox-image').alt = currentImages[currentIndex].alt;
-            }
-            break;
+    function openLightbox(img) {
+        // Alle Bilder der aktuellen Galerie sammeln
+        const gallery = img.closest('.grid') || document.getElementById('gallery');
+        currentImages = Array.from(gallery.querySelectorAll('img'));
+        currentIndex = currentImages.indexOf(img);
+        
+        document.getElementById('lightbox-image').src = img.src;
+        document.getElementById('lightbox').classList.remove('hidden');
+        document.getElementById('lightbox').classList.add('flex');
+        document.getElementById('lightbox-image').focus();
     }
-});
 
-// Klick außerhalb des Bildes schließt Lightbox
-document.getElementById('lightbox').addEventListener('click', function(e) {
-    if (e.target === this) closeLightbox();
-});
+    function closeLightbox() {
+        document.getElementById('lightbox').classList.add('hidden');
+        document.getElementById('lightbox').classList.remove('flex');
+    }
+
+    function showImage(index) {
+        if (index < 0) index = currentImages.length - 1;
+        if (index >= currentImages.length) index = 0;
+        
+        currentIndex = index;
+        document.getElementById('lightbox-image').src = currentImages[index].src;
+    }
+
+    // Keyboard Navigation
+    document.addEventListener('keydown', (e) => {
+        const lightbox = document.getElementById('lightbox');
+        
+        if (lightbox.classList.contains('hidden')) return;
+
+        if (e.key === "Escape") {
+            closeLightbox();
+        } else if (e.key === "ArrowRight") {
+            showImage(currentIndex + 1);
+        } else if (e.key === "ArrowLeft") {
+            showImage(currentIndex - 1);
+        }
+    });
 
 
     // ==================== FILTER FUNKTION ====================
