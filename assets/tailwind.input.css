@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Lange deutsche Komposita in Überschriften umbrechen, statt rechts aus dem
+   Bild zu laufen (z. B. „Datenschutzerklärung", „Geschäftsbedingungen",
+   „Kleinunternehmerregelung"). Greift nur, wenn ein Wort sonst überlaufen würde. */
+@layer base {
+  h1, h2, h3, h4 {
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
+}
