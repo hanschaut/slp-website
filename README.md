@@ -1,46 +1,33 @@
-# Astro Starter Kit: Basics
+# Schwarzlicht Photography — Website
+
+Website des Fotografen Hannes (Marke „Schwarzlicht Photography").
+Live unter https://schwarzlichtphotography.com
+
+## Was ist das?
+
+Eine handgeschriebene, statische HTML-Website. Es gibt keinen Build-Schritt –
+die Dateien im Repo-Wurzelverzeichnis werden genau so ausgeliefert.
+
+Die echten Seiten:
+
+- `index.html` – Startseite
+- `portfolio.html` – Portfolio/Galerie
+- `kontakt.html` – Kontakt
+- `impressum.html`, `datenschutz.html`, `agb.html` – Rechtliches
+- `404.html` – Fehlerseite
+
+Gestaltet mit [Tailwind CSS](https://tailwindcss.com) (über das CDN).
+Bilder und sonstige Assets liegen im Ordner `public/`.
+
+## Deployment
+
+Gehostet auf **Cloudflare Pages**, verbunden mit diesem GitHub-Repo.
+Jeder Push auf den Branch `main` veröffentlicht die Seite automatisch –
+direkt aus dem Repo-Wurzelverzeichnis, ohne Build.
+
+## Lokal ansehen
 
 ```sh
-npm create astro@latest -- --template basics
+python3 -m http.server 8000
+# → http://localhost:8000/index.html
 ```
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
-```
-
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
