@@ -320,8 +320,18 @@
                 class="absolute top-6 right-6 bg-zinc-900/80 hover:bg-red-600 text-white w-14 h-14 rounded-full flex items-center justify-center text-3xl transition z-10">
             ✕
         </button>
-        
-        <img id="lightbox-image" src="" alt="" 
+
+        <button onclick="showImage(currentIndex - 1)" aria-label="Vorheriges Bild"
+                class="absolute left-4 top-1/2 -translate-y-1/2 bg-zinc-900/80 hover:bg-amber-400 hover:text-zinc-950 text-white w-14 h-14 rounded-full flex items-center justify-center text-3xl transition z-10">
+            ‹
+        </button>
+
+        <button onclick="showImage(currentIndex + 1)" aria-label="Nächstes Bild"
+                class="absolute right-4 top-1/2 -translate-y-1/2 bg-zinc-900/80 hover:bg-amber-400 hover:text-zinc-950 text-white w-14 h-14 rounded-full flex items-center justify-center text-3xl transition z-10">
+            ›
+        </button>
+
+        <img id="lightbox-image" src="" alt=""
              class="max-w-[98vw] max-h-[98vh] object-contain rounded-2xl shadow-2xl"
              tabindex="0">
     </div>
@@ -337,7 +347,7 @@
             </h2>
             <p class="text-2xl text-zinc-400 mb-12">
                 Hochzeit • Porträts • Events<br>
-                Waldkirchen  (im Woid)
+                Waldkirchen (im Woid)
             
             </p>
             <a href="index.html#ablauf" class="inline-block bg-white text-zinc-950 px-12 py-5 rounded-full text-xl font-medium hover:bg-amber-400">
@@ -510,41 +520,25 @@ let currentImages = [];
         }
     });
 
+    // Touch-Swipe Navigation (Handy)
+    let touchStartX = 0;
+    let touchStartY = 0;
+    const lightboxEl = document.getElementById('lightbox');
 
-    // ==================== FILTER FUNKTION ====================
-    function filterCategory(category) {
-        const items = document.querySelectorAll('.gallery-item');
-        const buttons = document.querySelectorAll('#portfolio button');
+    lightboxEl.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+        touchStartY = e.changedTouches[0].screenY;
+    }, { passive: true });
 
-        // Alle Buttons zurücksetzen
-        buttons.forEach(btn => {
-            btn.classList.remove('active-filter', 'bg-amber-400/10', 'border-amber-400');
-        });
-
-        // Aktiven Button hervorheben
-        const activeButton = Array.from(buttons).find(btn => 
-            btn.getAttribute('onclick').includes(`'${category}'`)
-        );
-        if (activeButton) {
-            activeButton.classList.add('active-filter', 'bg-amber-400/10', 'border-amber-400');
+    lightboxEl.addEventListener('touchend', (e) => {
+        const deltaX = e.changedTouches[0].screenX - touchStartX;
+        const deltaY = e.changedTouches[0].screenY - touchStartY;
+        // Nur überwiegend horizontale Wischer ab ~50px werten (Tap-to-close bleibt erhalten)
+        if (Math.abs(deltaX) > 50 && Math.abs(deltaX) > Math.abs(deltaY)) {
+            if (deltaX < 0) showImage(currentIndex + 1);
+            else showImage(currentIndex - 1);
         }
-
-        // Bilder filtern
-        items.forEach(item => {
-            if (category === 'all') {
-                item.style.display = 'block';
-            } else {
-                item.style.display = (item.getAttribute('data-category') === category) ? 'block' : 'none';
-            }
-        });
-    }
-
-    // Initiales Laden (ohne Event)
-    document.addEventListener('DOMContentLoaded', () => {
-        filterCategory('all');
-    });
-
-
+    }, { passive: true });
 
 </script>
 
