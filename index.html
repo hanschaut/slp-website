@@ -12,45 +12,133 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "SchwarzLicht PHOTOGRAPHY",
-  "description": "Emotionale Hochzeitsfotografie, authentische Business-Porträts und Event-Fotografie im Bayerischen Wald.",
-  "url": "https://schwarzlichtphotography.com",
-  "telephone": "+49 152 32741548",
-  "email": "schwarzhannes@icloud.com",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Büchl 20",
-    "addressLocality": "Waldkirchen",
-    "addressRegion": "Bayern",
-    "postalCode": "94065",
-    "addressCountry": "DE"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": 48.72885,
-    "longitude": 13.60073
-  },
-  "image": "https://schwarzlichtphotography.com/public/bilder/og-image-2.jpg",
-  "priceRange": "€€",
-  "openingHoursSpecification": [
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-      "opens": "09:00",
-      "closes": "18:00"
-    }
-  ],
-  "sameAs": [
-    "https://www.instagram.com/schwarzlicht_photography/"
-  ],
   "@graph": [
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://schwarzlichtphotography.com/#localbusiness",
+      "name": "SchwarzLicht PHOTOGRAPHY",
+      "description": "Emotionale Hochzeitsfotografie, authentische Business-Porträts und Event-Fotografie im Bayerischen Wald.",
+      "url": "https://schwarzlichtphotography.com",
+      "telephone": "+49 152 32741548",
+      "email": "schwarzhannes@icloud.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Büchl 20",
+        "addressLocality": "Waldkirchen",
+        "addressRegion": "Bayern",
+        "postalCode": "94065",
+        "addressCountry": "DE"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 48.72885,
+        "longitude": 13.60073
+      },
+      "image": "https://schwarzlichtphotography.com/public/bilder/og-image-2.jpg",
+      "priceRange": "€€",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "09:00",
+          "closes": "18:00"
+        }
+      ],
+      "sameAs": [
+        "https://www.instagram.com/schwarzlicht_photography/"
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "8",
+        "bestRating": "5"
+      },
+      "review": [
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Celina Heinen"
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "reviewBody": "Wir haben unsere standesamtliche Hochzeit von dem lieben Hannes fotografieren lassen. Wir würden uns jeder Zeit wieder für ihn entscheiden... Ein super talentierter Fotograf mit Herz!"
+        },
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Karl Glass"
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "reviewBody": "Das Vertrauen anlässlich unseres 40jährigen Firmenjubiläums wurde in Form wunderschöner Momentaufnahmen mehr als bestätigt. Als Event-Fotograf auf jeden Fall weiterzuempfehlen."
+        },
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Elena F"
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "reviewBody": "Danke für die tollen Familienfotos und vor allem für die Zeit, die du in die Nachbearbeitung gesteckt hast! Das Besondere ist, dass die Fotos nicht gestellt sind."
+        },
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "ronja E"
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "reviewBody": "Man bemerkt wirklich die Freude und das Interesse am Fotografieren... Wir haben super Fotos bekommen. Sehr empfehlenswert!"
+        },
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Laura Auerhammer"
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "reviewBody": "Wir haben bei SchwarzLicht Photography ein Babyfotoshooting machen lassen. Waren sehr zufrieden! Der Fotograf war sehr freundlich und kann gut mit Kindern umgehen."
+        },
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Michael Lambert"
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "reviewBody": "Eine Bildsprache die ihresgleichen sucht. Ästhetisch. Pfiffig. Wunderschön. Sehr zu empfehlen!"
+        }
+      ]
+    },
     {
       "@type": "Photographer",
       "name": "Hannes Schwarz",
       "worksFor": {
-        "@type": "LocalBusiness",
-        "name": "SchwarzLicht PHOTOGRAPHY"
+        "@id": "https://schwarzlichtphotography.com/#localbusiness"
       }
     }
   ]
