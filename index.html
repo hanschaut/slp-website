@@ -31,7 +31,7 @@
     "latitude": 48.72885,
     "longitude": 13.60073
   },
-  "image": "https://schwarzlichtphotography.com/public/bilder/og-image.jpg",
+  "image": "https://schwarzlichtphotography.com/public/bilder/og-image-2.jpg",
   "priceRange": "€€",
   "openingHoursSpecification": [
     {
@@ -60,7 +60,7 @@
     <!-- Open Graph / Social Media -->
     <meta property="og:title" content="SchwarzLicht PHOTOGRAPHY - Hochzeitsfotograf Waldkirchen">
     <meta property="og:description" content="Emotionale Hochzeitsfotografie, Business-Porträts und Event-Fotografie im Bayerischen Wald.">
-    <meta property="og:image" content="https://schwarzlichtphotography.com/public/bilder/og-image.jpg">
+    <meta property="og:image" content="https://schwarzlichtphotography.com/public/bilder/og-image-2.jpg">
     <meta property="og:url" content="https://schwarzlichtphotography.com">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="de_DE">
@@ -69,10 +69,14 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="SchwarzLicht PHOTOGRAPHY - Hochzeitsfotograf Waldkirchen">
     <meta name="twitter:description" content="Emotionale Hochzeitsfotografie, Business-Porträts und Event-Fotografie im Bayerischen Wald.">
-    <meta name="twitter:image" content="https://schwarzlichtphotography.com/public/bilder/og-image.jpg">
+    <meta name="twitter:image" content="https://schwarzlichtphotography.com/public/bilder/og-image-2.jpg">
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://schwarzlichtphotography.com">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="public/favicon.svg">
+    <link rel="icon" type="image/x-icon" href="public/favicon.ico">
 
    <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -95,7 +99,7 @@
 <!-- Header -->
 <header class="fixed top-0 left-0 right-0 z-50 bg-zinc-950/90 backdrop-blur-md border-b border-zinc-800">
     <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
-        <a href="#" class="flex items-center gap-4">
+        <a href="index.html" class="flex items-center gap-4">
             <img src="public/logo.png" alt="SchwarzLicht PHOTOGRAPHY" class="h-16 w-auto">
         </a>
 
@@ -109,34 +113,32 @@
             Jetzt anrufen
         </a>
 
-        <button id="mobile-menu-button" class="md:hidden text-4xl text-white">
+        <button id="mobile-menu-button" class="md:hidden text-4xl text-white" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-menu">
             ☰
         </button>
     </div>
-
-    <!-- Fullscreen Mobile Menu -->
-    <div id="mobile-menu" class="hidden md:hidden fixed inset-0 bg-zinc-950/95 z-[9999] pt-32 px-6 overflow-y-autoflex items-center justify-center">
-        
-        <!-- Dieser Div sorgt für einen 100% undurchsichtigen Hintergrund -->
-    <div class="absolute inset-0 bg-zinc-950"></div>
-        
-        <div class="flex flex-col items-center gap-10 text-2xl uppercase tracking-widest text-center">
-            <a href="portfolio.html" onclick="toggleMobileMenu()" class="hover:text-amber-400 py-3">Portfolio</a>
-            <a href="#ueber-mich" onclick="toggleMobileMenu()" class="hover:text-amber-400 py-3">Über mich</a>
-            <a href="kontakt.html" onclick="toggleMobileMenu()" class="hover:text-amber-400 py-3">Kontakt</a>
-            
-            <a href="tel:+4915232741548" onclick="toggleMobileMenu()" 
-               class="mt-12 bg-white text-zinc-950 px-16 py-7 rounded-2xl font-medium text-xl hover:bg-amber-400 transition">
-                Jetzt anrufen
-            </a>
-        </div>
-
-        <button onclick="toggleMobileMenu()" 
-                class="absolute top-8 right-8 text-5xl text-zinc-400 hover:text-white">
-            ✕
-        </button>
-    </div>
 </header>
+
+<!-- Fullscreen Mobile Menu (außerhalb des Headers, damit fixed/inset-0 sich auf
+     den Viewport bezieht und nicht auf den backdrop-blur-Header) -->
+<div id="mobile-menu" role="dialog" aria-modal="true" aria-label="Navigation" class="hidden md:hidden fixed inset-0 bg-zinc-950 z-[9999] pt-32 px-6 overflow-y-auto flex items-center justify-center">
+
+    <div class="flex flex-col items-center gap-10 text-2xl uppercase tracking-widest text-center">
+        <a href="portfolio.html" onclick="toggleMobileMenu()" class="hover:text-amber-400 py-3">Portfolio</a>
+        <a href="#ueber-mich" onclick="toggleMobileMenu()" class="hover:text-amber-400 py-3">Über mich</a>
+        <a href="kontakt.html" onclick="toggleMobileMenu()" class="hover:text-amber-400 py-3">Kontakt</a>
+
+        <a href="tel:+4915232741548" onclick="toggleMobileMenu()"
+           class="mt-12 bg-white text-zinc-950 px-16 py-7 rounded-2xl font-medium text-xl hover:bg-amber-400 transition">
+            Jetzt anrufen
+        </a>
+    </div>
+
+    <button onclick="toggleMobileMenu()"
+            class="absolute top-8 right-8 text-5xl text-zinc-400 hover:text-white" aria-label="Menü schließen">
+        ✕
+    </button>
+</div>
 
     <!-- Hero -->
     <section class="min-h-screen flex items-center justify-center pt-20 text-center px-6">
@@ -265,7 +267,7 @@
 
         <!-- Bild 1 -->
         <div class="max-w-5xl mx-auto px-6">
-            <img src="public/bilder/philosophie/1.jpg" alt="" class="w-full h-auto block">
+            <img src="public/bilder/philosophie/1.jpg" alt="" loading="lazy" decoding="async" class="w-full h-auto block">
         </div>
 
         <!-- Zitat 1 -->
@@ -280,7 +282,7 @@
 
         <!-- Bild 2 -->
         <div class="max-w-5xl mx-auto px-6">
-            <img src="public/bilder/philosophie/2.jpg" alt="" class="w-full h-auto block">
+            <img src="public/bilder/philosophie/2.jpg" alt="" loading="lazy" decoding="async" class="w-full h-auto block">
         </div>
 
         <!-- Zitat 2 -->
@@ -295,7 +297,7 @@
 
         <!-- Bild 3 -->
         <div class="max-w-5xl mx-auto px-6">
-            <img src="public/bilder/philosophie/3.jpg" alt="" class="w-full h-auto block">
+            <img src="public/bilder/philosophie/3.jpg" alt="" loading="lazy" decoding="async" class="w-full h-auto block">
         </div>
 
         <!-- Zitat 3 -->
@@ -310,7 +312,7 @@
 
         <!-- Bild 4 -->
         <div class="max-w-5xl mx-auto px-6">
-            <img src="public/bilder/philosophie/4.jpg" alt="" class="w-full h-auto block">
+            <img src="public/bilder/philosophie/4.jpg" alt="" loading="lazy" decoding="async" class="w-full h-auto block">
         </div>
 
         <!-- Zitat 4 -->
@@ -325,7 +327,7 @@
 
         <!-- Bild 5 -->
         <div class="max-w-5xl mx-auto px-6">
-            <img src="public/bilder/philosophie/5.jpg" alt="" class="w-full h-auto block">
+            <img src="public/bilder/philosophie/5.jpg" alt="" loading="lazy" decoding="async" class="w-full h-auto block">
         </div>
 
         <!-- Zitat 5 -->
@@ -339,20 +341,20 @@
         </div>
 
         <!-- Bilder 6–10 (mit Zitaten) -->
-        <div class="max-w-5xl mx-auto px-6"><img src="public/bilder/philosophie/6.jpg" alt="" class="w-full h-auto block"></div>
+        <div class="max-w-5xl mx-auto px-6"><img src="public/bilder/philosophie/6.jpg" alt="" loading="lazy" decoding="async" class="w-full h-auto block"></div>
         <div class="bg-zinc-950 py-20 text-center"><div class="max-w-3xl mx-auto px-6"><p class="text-3xl italic text-white">„Der Moment entscheidet – nicht die Technik.“</p></div></div>
         
-        <div class="max-w-5xl mx-auto px-6"><img src="public/bilder/philosophie/7.jpg" alt="" class="w-full h-auto block"></div>
+        <div class="max-w-5xl mx-auto px-6"><img src="public/bilder/philosophie/7.jpg" alt="" loading="lazy" decoding="async" class="w-full h-auto block"></div>
         <div class="bg-zinc-950 py-20 text-center"><div class="max-w-3xl mx-auto px-6"><p class="text-3xl italic text-white">„Fotografie ist die Kunst, den unsichtbaren Augenblick sichtbar zu machen.“</p></div></div>
         
-        <div class="max-w-5xl mx-auto px-6"><img src="public/bilder/philosophie/8.jpg" alt="" class="w-full h-auto block"></div>
+        <div class="max-w-5xl mx-auto px-6"><img src="public/bilder/philosophie/8.jpg" alt="" loading="lazy" decoding="async" class="w-full h-auto block"></div>
         <div class="bg-zinc-950 py-20 text-center"><div class="max-w-3xl mx-auto px-6"><p class="text-3xl italic text-white">„Es ist eine Sache, ein Bild davon zu machen, wie eine Person aussieht – es ist eine andere Sache, ein Porträt davon zu machen, wer sie ist.
 “<p class="mt-6 text-amber-400">— Paul Caponigro</p></p></div></div>
         
-        <div class="max-w-5xl mx-auto px-6"><img src="public/bilder/philosophie/9.jpg" alt="" class="w-full h-auto block"></div>
+        <div class="max-w-5xl mx-auto px-6"><img src="public/bilder/philosophie/9.jpg" alt="" loading="lazy" decoding="async" class="w-full h-auto block"></div>
         <div class="bg-zinc-950 py-20 text-center"><div class="max-w-3xl mx-auto px-6"><p class="text-3xl italic text-white">„Jedes Foto erzählt eine Geschichte – ich höre nur zu.“</p></div></div>
         
-        <div class="max-w-5xl mx-auto px-6"><img src="public/bilder/philosophie/10.jpg" alt="" class="w-full h-auto block"></div>
+        <div class="max-w-5xl mx-auto px-6"><img src="public/bilder/philosophie/10.jpg" alt="" loading="lazy" decoding="async" class="w-full h-auto block"></div>
 
     </section>
 
@@ -621,11 +623,31 @@
 
       // ==================== burger ====================
 
-    function toggleMobileMenu() {
-        document.getElementById('mobile-menu').classList.toggle('hidden');
+    const menuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    function openMobileMenu() {
+        mobileMenu.classList.remove('hidden');
+        document.body.classList.add('menu-open');
+        menuButton.setAttribute('aria-expanded', 'true');
     }
 
-    document.getElementById('mobile-menu-button').addEventListener('click', toggleMobileMenu);
+    function closeMobileMenu() {
+        mobileMenu.classList.add('hidden');
+        document.body.classList.remove('menu-open');
+        menuButton.setAttribute('aria-expanded', 'false');
+    }
+
+    function toggleMobileMenu() {
+        if (mobileMenu.classList.contains('hidden')) openMobileMenu();
+        else closeMobileMenu();
+    }
+
+    menuButton.addEventListener('click', toggleMobileMenu);
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) closeMobileMenu();
+    });
 
 </script>
 
