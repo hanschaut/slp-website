@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#09090b">
+
+    <title>Seite nicht gefunden (404) – SchwarzLicht PHOTOGRAPHY</title>
+    <meta name="robots" content="noindex">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="public/favicon.svg">
+    <link rel="icon" type="image/x-icon" href="public/favicon.ico">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: system-ui, sans-serif; }
+
+        /* Verhindert Scrollen der Hauptseite wenn Menü offen */
+        body.menu-open {
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+
+<body class="bg-zinc-950 text-zinc-100">
+
+<!-- Header -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-zinc-950/90 backdrop-blur-md border-b border-zinc-800">
+    <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+        <a href="index.html" class="flex items-center gap-4">
+            <img src="public/logo.png" alt="SchwarzLicht PHOTOGRAPHY" class="h-16 w-auto">
+        </a>
+
+        <nav class="hidden md:flex gap-8 text-sm uppercase tracking-widest">
+            <a href="portfolio.html" class="hover:text-amber-400 transition">Portfolio</a>
+            <a href="index.html#ueber-mich" class="hover:text-amber-400 transition">Über mich</a>
+            <a href="kontakt.html" class="hover:text-amber-400 transition">Kontakt</a>
+        </nav>
+
+        <a href="tel:+4915232741548" class="hidden md:block bg-white text-zinc-950 px-8 py-4 rounded-full font-medium hover:bg-amber-400 transition">
+            Jetzt anrufen
+        </a>
+
+        <button id="mobile-menu-button" class="md:hidden text-4xl text-white" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-menu">
+            ☰
+        </button>
+    </div>
+</header>
+
+<!-- Fullscreen Mobile Menu (außerhalb des Headers, damit fixed/inset-0 sich auf
+     den Viewport bezieht und nicht auf den backdrop-blur-Header) -->
+<div id="mobile-menu" role="dialog" aria-modal="true" aria-label="Navigation" class="hidden md:hidden fixed inset-0 bg-zinc-950 z-[9999] pt-32 px-6 overflow-y-auto flex items-center justify-center">
+
+    <div class="flex flex-col items-center gap-10 text-2xl uppercase tracking-widest text-center">
+        <a href="portfolio.html" onclick="toggleMobileMenu()" class="hover:text-amber-400 py-3">Portfolio</a>
+        <a href="index.html#ueber-mich" onclick="toggleMobileMenu()" class="hover:text-amber-400 py-3">Über mich</a>
+        <a href="kontakt.html" onclick="toggleMobileMenu()" class="hover:text-amber-400 py-3">Kontakt</a>
+
+        <a href="tel:+4915232741548" onclick="toggleMobileMenu()"
+           class="mt-12 bg-white text-zinc-950 px-16 py-7 rounded-2xl font-medium text-xl hover:bg-amber-400 transition">
+            Jetzt anrufen
+        </a>
+    </div>
+
+    <button onclick="toggleMobileMenu()"
+            class="absolute top-8 right-8 text-5xl text-zinc-400 hover:text-white" aria-label="Menü schließen">
+        ✕
+    </button>
+</div>
+
+<!-- 404 Inhalt -->
+<main class="min-h-screen flex items-center justify-center pt-20 text-center px-6">
+    <div class="max-w-2xl">
+        <p class="text-8xl md:text-9xl font-light text-amber-400 leading-none mb-6">404</p>
+        <h1 class="text-4xl md:text-5xl tracking-tighter leading-tight mb-6">
+            Diese Seite gibt es leider nicht.
+        </h1>
+        <p class="text-xl text-zinc-400 mb-12">
+            Vielleicht ist der Link veraltet oder hat sich ein Tippfehler eingeschlichen.
+            Kein Problem – hier geht es zurück zu den schönen Bildern.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <a href="index.html" class="inline-block bg-white text-zinc-950 px-10 py-5 rounded-full text-lg font-medium hover:bg-amber-400 transition">
+                Zur Startseite
+            </a>
+            <a href="portfolio.html" class="inline-block border border-zinc-700 px-10 py-5 rounded-full text-lg font-medium hover:border-amber-400 hover:text-amber-400 transition">
+                Portfolio ansehen
+            </a>
+            <a href="kontakt.html" class="inline-block border border-zinc-700 px-10 py-5 rounded-full text-lg font-medium hover:border-amber-400 hover:text-amber-400 transition">
+                Kontakt
+            </a>
+        </div>
+    </div>
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="bg-black py-16 border-t border-zinc-800">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center">
+            <a href="index.html" class="inline-block">
+                <img src="public/logo.png" alt="SchwarzLicht PHOTOGRAPHY" class="h-32 w-auto mx-auto mb-6">
+            </a>
+            <p class="text-zinc-400 text-sm leading-relaxed mb-8">
+                Licht schreibt die Geschichte.<br>
+                Ich halte sie fest.
+            </p>
+
+            <div class="pt-8 border-t border-zinc-800 text-xs text-zinc-500">
+                © 2026 SchwarzLicht PHOTOGRAPHY •
+                <a href="impressum.html" class="hover:text-zinc-300 mx-3">Impressum</a> •
+                <a href="datenschutz.html" class="hover:text-zinc-300 mx-3">Datenschutz</a> •
+                <a href="agb.html" class="hover:text-zinc-300 mx-3">AGB</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+
+    // ==================== burger ====================
+
+    const menuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    function openMobileMenu() {
+        mobileMenu.classList.remove('hidden');
+        document.body.classList.add('menu-open');
+        menuButton.setAttribute('aria-expanded', 'true');
+    }
+
+    function closeMobileMenu() {
+        mobileMenu.classList.add('hidden');
+        document.body.classList.remove('menu-open');
+        menuButton.setAttribute('aria-expanded', 'false');
+    }
+
+    function toggleMobileMenu() {
+        if (mobileMenu.classList.contains('hidden')) openMobileMenu();
+        else closeMobileMenu();
+    }
+
+    menuButton.addEventListener('click', toggleMobileMenu);
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) closeMobileMenu();
+    });
+
+</script>
+
+</body>
+</html>
