@@ -347,7 +347,7 @@
             </h2>
             <p class="text-2xl text-zinc-400 mb-12">
                 Hochzeit • Porträts • Events<br>
-                Waldkirchen  (im Woid)
+                Waldkirchen (im Woid)
             
             </p>
             <a href="index.html#ablauf" class="inline-block bg-white text-zinc-950 px-12 py-5 rounded-full text-xl font-medium hover:bg-amber-400">
@@ -539,42 +539,6 @@ let currentImages = [];
             else showImage(currentIndex - 1);
         }
     }, { passive: true });
-
-
-    // ==================== FILTER FUNKTION ====================
-    function filterCategory(category) {
-        const items = document.querySelectorAll('.gallery-item');
-        const buttons = document.querySelectorAll('#portfolio button');
-
-        // Alle Buttons zurücksetzen
-        buttons.forEach(btn => {
-            btn.classList.remove('active-filter', 'bg-amber-400/10', 'border-amber-400');
-        });
-
-        // Aktiven Button hervorheben
-        const activeButton = Array.from(buttons).find(btn => 
-            btn.getAttribute('onclick').includes(`'${category}'`)
-        );
-        if (activeButton) {
-            activeButton.classList.add('active-filter', 'bg-amber-400/10', 'border-amber-400');
-        }
-
-        // Bilder filtern
-        items.forEach(item => {
-            if (category === 'all') {
-                item.style.display = 'block';
-            } else {
-                item.style.display = (item.getAttribute('data-category') === category) ? 'block' : 'none';
-            }
-        });
-    }
-
-    // Initiales Laden (ohne Event)
-    document.addEventListener('DOMContentLoaded', () => {
-        filterCategory('all');
-    });
-
-
 
 </script>
 
