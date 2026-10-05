@@ -146,13 +146,18 @@
                 <!-- Rechts - Formular -->
                 <div>
                     <h2 class="text-3xl mb-8">Nachricht schreiben</h2>
-                    <form action="https://formspree.io/f/mkoejjdq" method="POST" class="space-y-6">
+                    <form action="https://formspree.io/f/mkoejjdq" method="POST" aria-describedby="kontakt-datenschutz" class="space-y-6">
                         <label for="name" class="sr-only">Dein Name</label>
                         <input type="text" id="name" name="name" placeholder="Dein Name" autocomplete="name" required class="w-full bg-zinc-900 border border-zinc-700 rounded-2xl px-6 py-5 focus:outline-none focus:border-amber-400">
                         <label for="email" class="sr-only">Deine E-Mail</label>
                         <input type="email" id="email" name="email" placeholder="Deine E-Mail" autocomplete="email" required class="w-full bg-zinc-900 border border-zinc-700 rounded-2xl px-6 py-5 focus:outline-none focus:border-amber-400">
                         <label for="message" class="sr-only">Deine Nachricht</label>
                         <textarea id="message" name="message" rows="8" placeholder="Deine Nachricht..." required class="w-full bg-zinc-900 border border-zinc-700 rounded-2xl px-6 py-5 focus:outline-none focus:border-amber-400"></textarea>
+                        <p id="kontakt-datenschutz" class="text-sm text-zinc-400 leading-relaxed">
+                            Beim Absenden werden deine Angaben an Formspree (USA) übermittelt.
+                            Details findest du in der <a href="datenschutz.html#kontaktformular" class="text-amber-400" style="text-decoration: underline;">Datenschutzerklärung</a>.
+                            Alternativ kannst du mich per E-Mail oder Telefon kontaktieren.
+                        </p>
                         <button type="submit" class="w-full bg-white text-zinc-950 py-6 rounded-2xl font-medium text-lg hover:bg-amber-400 transition">
                             Nachricht senden
                         </button>
@@ -215,12 +220,14 @@
         mobileMenu.classList.remove('hidden');
         document.body.classList.add('menu-open');
         menuButton.setAttribute('aria-expanded', 'true');
+        mobileMenu.querySelector('a, button').focus();
     }
 
     function closeMobileMenu() {
         mobileMenu.classList.add('hidden');
         document.body.classList.remove('menu-open');
         menuButton.setAttribute('aria-expanded', 'false');
+        menuButton.focus();
     }
 
     function toggleMobileMenu() {
@@ -231,7 +238,20 @@
     menuButton.addEventListener('click', toggleMobileMenu);
 
     document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) closeMobileMenu();
+        if (mobileMenu.classList.contains('hidden')) return;
+        if (e.key === 'Escape') closeMobileMenu();
+        if (e.key === 'Tab') {
+            const items = Array.from(mobileMenu.querySelectorAll('a[href], button'));
+            const first = items[0];
+            const last = items[items.length - 1];
+            if (e.shiftKey && document.activeElement === first) {
+                e.preventDefault();
+                last.focus();
+            } else if (!e.shiftKey && document.activeElement === last) {
+                e.preventDefault();
+                first.focus();
+            }
+        }
     });
 
     </script>

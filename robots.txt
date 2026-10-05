@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://schwarzlichtphotography.com/sitemap.xml
+Sitemap: https://schwarzlichtphotography.com/sitemap-images.xml
