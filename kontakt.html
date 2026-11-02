@@ -146,7 +146,7 @@
                 <!-- Rechts - Formular -->
                 <div>
                     <h2 class="text-3xl mb-8">Nachricht schreiben</h2>
-                    <form action="https://formspree.io/f/mkoejjdq" method="POST" aria-describedby="kontakt-datenschutz" class="space-y-6">
+                    <form id="kontakt-formular" action="https://formspree.io/f/mkoejjdq" method="POST" aria-describedby="kontakt-datenschutz" class="space-y-6">
                         <input type="hidden" name="_next" value="https://schwarzlichtphotography.com/danke.html">
                         <label for="name" class="sr-only">Dein Name</label>
                         <input type="text" id="name" name="name" placeholder="Dein Name" autocomplete="name" required class="w-full bg-zinc-900 border border-zinc-700 rounded-2xl px-6 py-5 focus:outline-none focus:border-amber-400">
@@ -158,6 +158,9 @@
                             Beim Absenden werden deine Angaben an Formspree (USA) übermittelt.
                             Details findest du in der <a href="datenschutz.html#kontaktformular" class="text-amber-400" style="text-decoration: underline;">Datenschutzerklärung</a>.
                             Alternativ kannst du mich per E-Mail oder Telefon kontaktieren.
+                        </p>
+                        <p id="kontakt-fehler" role="alert" class="hidden text-amber-400 leading-relaxed">
+                            Das hat leider nicht geklappt. Bitte versuche es noch einmal oder schreib mir direkt per E-Mail oder Telefon.
                         </p>
                         <button type="submit" class="w-full bg-white text-zinc-950 py-6 rounded-2xl font-medium text-lg hover:bg-amber-400 transition">
                             Nachricht senden
@@ -237,6 +240,35 @@
     }
 
     menuButton.addEventListener('click', toggleMobileMenu);
+
+    // ==================== Kontaktformular ====================
+    // Sendet im Hintergrund an Formspree und leitet danach auf die Dankesseite weiter.
+    // Ohne JavaScript bleibt das normale Absenden erhalten.
+    const kontaktFormular = document.getElementById('kontakt-formular');
+    const kontaktFehler = document.getElementById('kontakt-fehler');
+
+    kontaktFormular.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const button = kontaktFormular.querySelector('button[type="submit"]');
+        const buttonText = button.textContent;
+        button.disabled = true;
+        button.textContent = 'Wird gesendet …';
+        kontaktFehler.classList.add('hidden');
+
+        try {
+            const antwort = await fetch(kontaktFormular.action, {
+                method: 'POST',
+                body: new FormData(kontaktFormular),
+                headers: { 'Accept': 'application/json' }
+            });
+            if (!antwort.ok) throw new Error('Formspree ' + antwort.status);
+            window.location.href = 'danke.html';
+        } catch (fehler) {
+            kontaktFehler.classList.remove('hidden');
+            button.disabled = false;
+            button.textContent = buttonText;
+        }
+    });
 
     document.addEventListener('keydown', (e) => {
         if (mobileMenu.classList.contains('hidden')) return;
